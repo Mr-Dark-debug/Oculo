@@ -19,6 +19,46 @@ function initNavbarScroll() {
     }, { passive: true });
 }
 
+/* ─── Mobile Menu ─────────────────────── */
+window.toggleMobileMenu = function () {
+    const menu = document.querySelector('.mobile-menu');
+    const toggle = document.querySelector('.nav-toggle');
+    const body = document.body;
+
+    if (menu && toggle) {
+        menu.classList.toggle('active');
+        toggle.classList.toggle('open');
+
+        // Prevent scrolling when menu is open
+        if (menu.classList.contains('active')) {
+            body.style.overflow = 'hidden';
+        } else {
+            body.style.overflow = '';
+        }
+    }
+}
+
+function highlightActiveLink() {
+    const currentPath = window.location.pathname;
+    const links = document.querySelectorAll('.nav-link-premium');
+
+    links.forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+
+        // Clean paths for comparison
+        const linkPath = href.replace('../', '').replace('./', '');
+        const pageName = currentPath.split('/').pop() || 'index.html';
+
+        // Strict match for index, partial for others
+        if (linkPath === pageName || (pageName === '' && linkPath === 'index.html')) {
+            link.classList.add('active');
+        } else if (linkPath.endsWith(pageName) && pageName !== 'index.html') {
+            link.classList.add('active');
+        }
+    });
+}
+
 /* ─── Scroll Reveal ───────────────────── */
 function initScrollReveal() {
     const observer = new IntersectionObserver((entries) => {
@@ -42,6 +82,11 @@ function initSmoothScroll() {
             const target = document.querySelector(targetId);
             if (target) {
                 window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+
+                // Close mobile menu if open
+                if (document.querySelector('.mobile-menu.active')) {
+                    toggleMobileMenu();
+                }
             }
         });
     });
@@ -69,7 +114,18 @@ async function loadComponents() {
 
                 el.innerHTML = html;
 
-                // Re-observe newly loaded elements for scroll reveal
+                // Component-specific inits
+                if (name === 'navbar') {
+                    highlightActiveLink();
+                    // Re-bind click listeners for mobile menu links to close menu
+                    el.querySelectorAll('.mobile-menu a').forEach(a => {
+                        a.addEventListener('click', toggleMobileMenu);
+                    });
+                }
+                if (name === 'hero') initHeroTyping();
+                if (name === 'github-stats') fetchGitHubStats();
+
+                // Re-observe newly loaded elements
                 el.querySelectorAll('.reveal').forEach(r => {
                     const observer = new IntersectionObserver((entries) => {
                         entries.forEach(entry => {
@@ -78,10 +134,6 @@ async function loadComponents() {
                     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
                     observer.observe(r);
                 });
-
-                // Component-specific inits
-                if (name === 'hero') initHeroTyping();
-                if (name === 'github-stats') fetchGitHubStats();
             }
         } catch (e) {
             console.error(`Error loading component: ${name}`, e);
@@ -204,8 +256,3 @@ async function initFullContributors() {
         container.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 4rem; color: var(--text-muted);">Could not load contributors. Please check back later.</div>';
     }
 }
-
-/* ─── CSS Keyframes (injected) ────────── */
-const style = document.createElement('style');
-style.textContent = '@keyframes blink { 50% { opacity: 0; } }';
-document.head.appendChild(style);
