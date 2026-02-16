@@ -6,6 +6,12 @@
 </p>
 
 <p align="center">
+  <a href="https://pypi.org/project/oculo-sdk/">
+    <img src="https://img.shields.io/pypi/v/oculo-sdk.svg" alt="PyPI version">
+  </a>
+</p>
+
+<p align="center">
   <a href="#install">Install</a> &middot;
   <a href="#quick-start">Quick Start</a> &middot;
   <a href="#sdk-reference">SDK</a> &middot;
@@ -254,12 +260,8 @@ make clean          # Remove build artifacts
 
 ---
 
-## License
-
-MIT
-
----
+## License - MIT
 
 <p align="center">
-  <sub>Built for engineers who debug AI agents, not decorate terminals.</sub>
+  <sub>Built for engineers who debug AI agents.</sub>
 </p>

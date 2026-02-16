@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Oculo</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .blog-post-card { background: white; border: 1px solid var(--border-soft); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.4s ease; box-shadow: var(--shadow-card); display: flex; flex-direction: column; }
+        .blog-post-card:hover { transform: translateY(-8px); border-color: var(--brand-primary); box-shadow: var(--shadow-floating); }
+        .blog-thumb { height: 240px; background: var(--bg-soft); display: flex; align-items: center; justify-content: center; position: relative; }
+        .blog-thumb::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.02)); }
+        .blog-body { padding: 2.5rem; }
+        .blog-date { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--text-faint); letter-spacing: 0.1em; margin-bottom: 1rem; display: block; }
+    </style>
+</head>
+<body>
+    <div class="mesh-bg"></div>
+    <nav class="nav-premium">
+        <a href="../index.html" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem; text-decoration: none; margin-left: 1rem;">
+            <div style="width: 28px; height: 28px; background: var(--text-main); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle></svg>
+            </div>
+            Oculo
+        </a>
+        <div style="flex: 1; display: flex; justify-content: center; gap: 2rem;">
+            <a href="docs.html" class="nav-link-premium">Docs</a>
+            <a href="installation.html" class="nav-link-premium">Install</a>
+            <a href="about.html" class="nav-link-premium">About</a>
+        </div>
+        <div style="margin-right: 1rem;">
+            <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Star on GitHub</a>
+        </div>
+    </nav>
+
+    <header class="section" style="padding-top: 15rem;">
+        <div class="container text-center">
+            <h1 class="hero-title" style="font-size: 4rem;">Insights.</h1>
+            <p style="font-size: 1.25rem; color: var(--text-muted); margin-top: 2rem;">Engineering thoughts on AI observability.</p>
+        </div>
+    </header>
+
+    <main class="container" style="padding-bottom: 10rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 3rem;">
+            <div class="blog-post-card reveal">
+                <div class="blog-thumb">
+                    <div style="width: 100px; height: 100px; background: var(--brand-primary-glow); border-radius: 20px; transform: rotate(15deg);"></div>
+                </div>
+                <div class="blog-body">
+                    <span class="blog-date">Feb 16, 2026</span>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Why Tracing Agents is Different from Microservices</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Traditional APM focuses on latency. Agent observability focuses on cognition loops. Learn why we built a specialized stack for AI.</p>
+                    <a href="#" style="color: var(--brand-primary); font-weight: 700; text-decoration: none; font-size: 0.9rem;">Read Post â†’</a>
+                </div>
+            </div>
+
+            <div class="blog-post-card reveal stagger-1">
+                <div class="blog-thumb">
+                    <div style="width: 120px; height: 10px; background: #10b981; border-radius: 10px; opacity: 0.3;"></div>
+                </div>
+                <div class="blog-body">
+                    <span class="blog-date">Feb 10, 2026</span>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Local-First Data with Go and SQLite</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">How we achieved sub-millisecond overhead during ingestion by keeping the data strictly local and using optimized batch flushes.</p>
+                    <a href="#" style="color: var(--brand-primary); font-weight: 700; text-decoration: none; font-size: 0.9rem;">Read Post â†’</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div data-component="footer"></div>
+
+    <script src="assets/js/main.js"></script>
+    <style>.nav-link-premium { text-decoration: none; color: var(--text-muted); font-weight: 500; transition: color 0.3s; }.nav-link-premium:hover { color: var(--text-main); }</style>
+</body>
+</html>

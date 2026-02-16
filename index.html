@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oculo | The Glass Box for AI Agents</title>
+    <meta name="description" content="Debug AI Cognition. Not Just Code. Local-first observability for AI Agents.">
+    
+    <link rel="icon" type="image/svg+xml" href="banner.svg">
+    <link rel="stylesheet" href="website/assets/css/styles.css">
+</head>
+<body>
+    <div class="mesh-bg"></div>
+
+    <nav class="nav-premium">
+        <a href="#" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem; text-decoration: none; margin-left: 1rem;">
+            <div style="width: 28px; height: 28px; background: var(--text-main); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle></svg>
+            </div>
+            Oculo
+        </a>
+        
+        <div style="flex: 1; display: flex; justify-content: center; gap: 2rem;">
+            <a href="website/docs.html" class="nav-link-premium">Docs</a>
+            <a href="website/installation.html" class="nav-link-premium">Install</a>
+            <a href="#features" class="nav-link-premium">Features</a>
+            <a href="website/blog.html" class="nav-link-premium">Blog</a>
+        </div>
+
+        <div style="margin-right: 1rem;">
+            <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Star on GitHub</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Dynamic Hero -->
+        <div data-component="hero"></div>
+
+        <!-- Social Proof / Stats -->
+        <section class="container" style="margin-top: -4rem;">
+            <div class="glass" style="padding: 3rem; border-radius: var(--radius-lg); text-align: center;">
+                <div data-component="stats"></div>
+            </div>
+        </section>
+
+        <!-- Bento Grid Features -->
+        <section id="features" class="section">
+            <div class="container">
+                <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
+                    <h2 style="font-size: 3.5rem; margin-bottom: 1rem;">Engineered for Clarity.</h2>
+                    <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto;">Everything you need to stop guessing why your agents are hallucinating or looping.</p>
+                </div>
+                
+                <div data-component="features"></div>
+            </div>
+        </section>
+
+        <!-- Dynamic GitHub Stats -->
+        <section class="section" style="background: var(--bg-soft); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft);">
+            <div class="container">
+                <div data-component="github-stats"></div>
+            </div>
+        </section>
+
+        <!-- Contributors -->
+        <section class="section">
+            <div class="container text-center">
+                <h2 style="font-size: 3rem; margin-bottom: 4rem;">Built by Developers.</h2>
+                <div id="contributors-scroll" class="flex" style="justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <!-- Injected -->
+                </div>
+                <div style="margin-top: 4rem;">
+                    <a href="website/contributors.html" style="color: var(--brand-primary); font-weight: 600; text-decoration: none;">Meet the full team â†’</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section" style="padding-top: 5rem;">
+            <div class="container">
+                <div style="background: var(--text-main); color: white; border-radius: var(--radius-lg); padding: 5rem; text-align: center; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at center, rgba(99, 102, 241, 0.2) 0%, transparent 50%); pointer-events: none;"></div>
+                    <h2 style="font-size: 3.5rem; margin-bottom: 1.5rem; position: relative;">Ready to Open the Box?</h2>
+                    <p style="font-size: 1.25rem; color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto 3rem; position: relative;">Join hundreds of AI engineers building more reliable agentic systems with Oculo.</p>
+                    <div style="position: relative;">
+                        <a href="website/installation.html" class="btn-premium" style="background: white; color: var(--text-main);">Get Started for Free</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div data-component="footer"></div>
+
+    <script src="website/assets/js/main.js"></script>
+    <style>
+        .nav-link-premium {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+        .nav-link-premium:hover {
+            color: var(--text-main);
+        }
+        @media (max-width: 768px) {
+            .nav-link-premium { display: none; }
+        }
+        .avatar-link img {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: var(--shadow-card);
+            transition: transform 0.3s ease;
+        }
+        .avatar-link:hover img {
+            transform: scale(1.1) translateY(-5px);
+            border-color: var(--brand-primary);
+        }
+    </style>
+</body>
+</html>

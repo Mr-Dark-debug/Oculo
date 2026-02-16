@@ -1,0 +1,24 @@
+<div id="contributors-list" class="flex gap-4" style="justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+    <!-- Avatars will be injected by main.js -->
+    <div class="animate-fade" style="color: var(--text-secondary); font-size: 0.875rem;">Loading contributors...</div>
+</div>
+
+<style>
+    .contributor-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid var(--accent-border);
+        transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .contributor-avatar:hover {
+        transform: scale(1.1);
+        border-color: var(--accent-blue);
+    }
+    .contributor-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>

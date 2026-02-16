@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Oculo</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .contact-card-premium { background: white; border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 4rem; text-align: center; transition: all 0.4s ease; box-shadow: var(--shadow-card); text-decoration: none; color: inherit; }
+        .contact-card-premium:hover { transform: translateY(-10px); border-color: var(--brand-primary); box-shadow: var(--shadow-floating); }
+        .contact-icon { font-size: 3rem; margin-bottom: 2rem; display: block; }
+    </style>
+</head>
+<body>
+    <div class="mesh-bg"></div>
+    <nav class="nav-premium">
+        <a href="../index.html" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem; text-decoration: none; margin-left: 1rem;">
+            <div style="width: 28px; height: 28px; background: var(--text-main); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle></svg>
+            </div>
+            Oculo
+        </a>
+        <div style="flex: 1; display: flex; justify-content: center; gap: 2rem;">
+            <a href="docs.html" class="nav-link-premium">Docs</a>
+            <a href="installation.html" class="nav-link-premium">Install</a>
+            <a href="blog.html" class="nav-link-premium">Blog</a>
+        </div>
+        <div style="margin-right: 1rem;">
+            <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Star on GitHub</a>
+        </div>
+    </nav>
+
+    <header class="section" style="padding-top: 15rem;">
+        <div class="container text-center">
+            <h1 class="hero-title" style="font-size: 4rem;">Get in Touch.</h1>
+            <p style="font-size: 1.25rem; color: var(--text-muted); margin-top: 2rem;">Feedback, support, or just to talk AI tracing.</p>
+        </div>
+    </header>
+
+    <main class="container" style="padding-bottom: 10rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem;">
+            <a href="https://github.com/Mr-Dark-debug/Oculo/issues" class="contact-card-premium reveal">
+                <span class="contact-icon">🛠️</span>
+                <h3>GitHub Issues</h3>
+                <p style="color: var(--text-muted); margin-top: 1rem;">Report bugs, suggest features, or contribute to the core Go daemon.</p>
+            </a>
+            <a href="https://x.com/oculo_dev" class="contact-card-premium reveal stagger-1">
+                <span class="contact-icon">🐦</span>
+                <h3>Twitter / X</h3>
+                <p style="color: var(--text-muted); margin-top: 1rem;">Get real-time updates on development and upcoming release candidates.</p>
+            </a>
+            <a href="mailto:hello@oculo.dev" class="contact-card-premium reveal stagger-2">
+                <span class="contact-icon">📧</span>
+                <h3>Email</h3>
+                <p style="color: var(--text-muted); margin-top: 1rem;">Direct line for partnership inquiries, security reports, or private support.</p>
+            </a>
+        </div>
+    </main>
+
+    <div data-component="footer"></div>
+
+    <script src="assets/js/main.js"></script>
+    <style>.nav-link-premium { text-decoration: none; color: var(--text-muted); font-weight: 500; transition: color 0.3s; }.nav-link-premium:hover { color: var(--text-main); }</style>
+</body>
+</html>

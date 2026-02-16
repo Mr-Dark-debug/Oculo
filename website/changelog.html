@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog | Oculo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .changelog-container { max-width: 800px; margin: 4rem auto; }
+        .version-block { margin-bottom: 6rem; }
+        .version-header { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
+        .version-number { font-size: 2rem; font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--text-primary); }
+        .version-date { color: var(--text-muted); font-size: 1rem; }
+        .change-category { margin-bottom: 2rem; }
+        .category-title { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 1rem; }
+        .change-list { list-style: none; }
+        .change-item { margin-bottom: 0.75rem; display: flex; gap: 1rem; align-items: flex-start; }
+        .change-badge { padding: 0.125rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; flex-shrink: 0; margin-top: 0.25rem; }
+        .badge-added { background: rgba(16, 185, 129, 0.1); color: var(--accent-success); }
+        .badge-fixed { background: rgba(239, 68, 68, 0.1); color: var(--accent-error); }
+        .badge-improved { background: rgba(79, 70, 229, 0.1); color: var(--accent-primary); }
+    </style>
+</head>
+<body>
+    <div data-component="navbar"></div>
+
+    <header class="section" style="padding-top: 10rem; background: var(--bg-secondary);">
+        <div class="container text-center">
+            <h1 style="font-size: 3.5rem;">Changelog</h1>
+            <p style="font-size: 1.25rem; margin-top: 1rem;">The evolution of AI tracing, version by version.</p>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container changelog-container">
+            <div class="version-block reveal">
+                <div class="version-header">
+                    <span class="version-number">v0.1.0</span>
+                    <span class="version-date">February 16, 2026</span>
+                </div>
+                <div class="change-category">
+                    <div class="category-title">Added</div>
+                    <ul class="change-list">
+                        <li class="change-item">
+                            <span class="change-badge badge-added">Added</span>
+                            <span>Initial release of Oculo core daemon in Go.</span>
+                        </li>
+                        <li class="change-item">
+                            <span class="change-badge badge-added">Added</span>
+                            <span>Python SDK with automated context managers for traces and spans.</span>
+                        </li>
+                        <li class="change-item">
+                            <span class="change-badge badge-added">Added</span>
+                            <span>Protobuf-based ingestion protocol over TCP and UDS.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="change-category">
+                    <div class="category-title">Improved</div>
+                    <ul class="change-list">
+                        <li class="change-item">
+                            <span class="change-badge badge-improved">Improved</span>
+                            <span>Sub-millisecond latency for span ingestion on local UDS.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="version-block reveal" style="opacity: 0.6;">
+                <div class="version-header">
+                    <span class="version-number">v0.2.0-alpha</span>
+                    <span class="version-date">Coming soon</span>
+                </div>
+                <div class="change-category">
+                    <div class="category-title">Planned</div>
+                    <ul class="change-list">
+                        <li class="change-item">
+                            <span class="change-badge badge-added">Upcoming</span>
+                            <span>Full TUI visualization engine for real-time trace inspection.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div data-component="footer"></div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="components/animations.js"></script>
+</body>
+</html>

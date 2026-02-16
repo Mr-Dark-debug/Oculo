@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation | Oculo</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div class="mesh-bg"></div>
+    <nav class="nav-premium">
+        <a href="../index.html" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem; text-decoration: none; margin-left: 1rem;">
+            <div style="width: 28px; height: 28px; background: var(--text-main); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle></svg>
+            </div>
+            Oculo
+        </a>
+        <div style="flex: 1; display: flex; justify-content: center; gap: 2rem;">
+            <a href="docs.html" class="nav-link-premium">Docs</a>
+            <a href="blog.html" class="nav-link-premium">Blog</a>
+            <a href="about.html" class="nav-link-premium">About</a>
+        </div>
+        <div style="margin-right: 1rem;">
+            <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Star on GitHub</a>
+        </div>
+    </nav>
+
+    <header class="section" style="padding-top: 15rem;">
+        <div class="container text-center">
+            <h1 class="hero-title" style="font-size: 4rem;">Up and Running.</h1>
+            <p style="font-size: 1.25rem; color: var(--text-muted); margin-top: 2rem;">Install the Oculo daemon and start tracing your agents in seconds.</p>
+        </div>
+    </header>
+
+    <main class="container" style="padding-bottom: 10rem;">
+        <div class="bento-grid">
+            <!-- Automatic Install -->
+            <div class="bento-item reveal" style="grid-column: span 12;">
+                <div style="display: flex; gap: 4rem; align-items: center;">
+                    <div style="flex: 1;">
+                        <h2>Automated Script</h2>
+                        <p style="margin-top: 1rem; color: var(--text-muted);">The fastest way to install Oculo on macOS, Linux, or WSL. Our script automatically detects your architecture and installs the latest binary.</p>
+                    </div>
+                    <div style="flex: 1;">
+                        <div class="terminal-premium">
+                            <div style="display: flex; gap: 8px; margin-bottom: 1rem;">
+                                <span style="width: 10px; height: 10px; border-radius: 50%; background: #ff5f56;"></span>
+                                <span style="width: 10px; height: 10px; border-radius: 50%; background: #ffbd2e;"></span>
+                                <span style="width: 10px; height: 10px; border-radius: 50%; background: #27c93f;"></span>
+                            </div>
+                            <code style="color: #e2e8f0;">curl -sSf https://install.oculo.dev | bash</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package Managers -->
+            <div class="bento-item reveal stagger-1" style="grid-column: span 6;">
+                <h3>Package Managers</h3>
+                <div style="margin-top: 2rem;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="font-size: 0.75rem; font-weight: 800; color: var(--text-faint); margin-bottom: 0.5rem; text-transform: uppercase;">macOS (Homebrew)</div>
+                        <code>brew install oculo-project/tap/oculo</code>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.75rem; font-weight: 800; color: var(--text-faint); margin-bottom: 0.5rem; text-transform: uppercase;">Windows (WinGet)</div>
+                        <code>winget install oculo</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Docker -->
+            <div class="bento-item reveal stagger-2" style="grid-column: span 6;">
+                <h3>Docker</h3>
+                <p style="margin-top: 1rem; color: var(--text-muted);">Run the Oculo daemon in a isolated container environment.</p>
+                <div class="terminal-premium" style="margin-top: 1.5rem; padding: 1.5rem;">
+                    <code style="color: #e2e8f0; font-size: 0.8rem;">docker pull oculodev/oculo:latest</code>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div data-component="footer"></div>
+
+    <script src="assets/js/main.js"></script>
+    <style>.nav-link-premium { text-decoration: none; color: var(--text-muted); font-weight: 500; transition: color 0.3s; }.nav-link-premium:hover { color: var(--text-main); }</style>
+</body>
+</html>

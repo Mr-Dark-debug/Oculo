@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation | Oculo</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .docs-layout { display: grid; grid-template-columns: 300px 1fr; gap: 6rem; padding-top: 15rem; }
+        .docs-sidebar { position: sticky; top: 100px; height: calc(100vh - 150px); overflow-y: auto; padding-right: 2rem; border-right: 1px solid var(--border-soft); }
+        .sidebar-section { margin-bottom: 3rem; }
+        .sidebar-header { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-faint); margin-bottom: 1.5rem; }
+        .sidebar-link { display: block; color: var(--text-muted); text-decoration: none; padding: 0.6rem 0; font-weight: 500; font-size: 0.95rem; transition: all 0.2s; }
+        .sidebar-link:hover, .sidebar-link.active { color: var(--brand-primary); transform: translateX(5px); }
+        .docs-content section { margin-bottom: 8rem; scroll-margin-top: 150px; }
+        code { font-family: 'JetBrains Mono', monospace; background: var(--bg-soft); color: var(--brand-primary); padding: 0.2rem 0.5rem; border-radius: 6px; font-size: 0.9em; }
+        pre { background: #0f172a; color: #e2e8f0; padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-soft); overflow-x: auto; margin: 2rem 0; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="mesh-bg"></div>
+    <nav class="nav-premium">
+        <a href="../index.html" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem; text-decoration: none; margin-left: 1rem;">
+            <div style="width: 28px; height: 28px; background: var(--text-main); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle></svg>
+            </div>
+            Oculo
+        </a>
+        <div style="flex: 1; display: flex; justify-content: center; gap: 2rem;">
+            <a href="installation.html" class="nav-link-premium">Install</a>
+            <a href="blog.html" class="nav-link-premium">Blog</a>
+            <a href="about.html" class="nav-link-premium">About</a>
+        </div>
+        <div style="margin-right: 1rem;">
+            <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Star on GitHub</a>
+        </div>
+    </nav>
+
+    <main class="container docs-layout" style="padding-bottom: 10rem;">
+        <aside class="docs-sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-header">Getting Started</div>
+                <a href="#intro" class="sidebar-link active">Introduction</a>
+                <a href="#arch" class="sidebar-link">Architecture</a>
+                <a href="#concepts" class="sidebar-link">Core Concepts</a>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-header">SDK Reference</div>
+                <a href="#python" class="sidebar-link">Python</a>
+                <a href="#go" class="sidebar-link">Go</a>
+            </div>
+        </aside>
+
+        <article class="docs-content">
+            <section id="intro">
+                <h1 style="font-size: 3.5rem; margin-bottom: 2rem;">Introduction</h1>
+                <p style="font-size: 1.25rem; color: var(--text-muted); line-height: 1.8;">Oculo is a high-performance observability tool built specifically for AI Agents. It provides the "Glass Box" needed to understand non-deterministic agent cognition by capturing thought traces, memory mutations, and prompt evolution in real-time.</p>
+                <p style="margin-top: 2rem;">Unlike traditional observability (APM) which focuses on request/response and latency, Oculo treats AI-specific data—like context windows and internal reasoning steps—as first-class citizens.</p>
+            </section>
+
+            <section id="arch">
+                <h2>Architecture Overview</h2>
+                <p>Oculo follows a local-first, high-throughput design:</p>
+                <div class="bento-item" style="margin-top: 2rem; padding: 2.5rem;">
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 1.5rem; display: flex; gap: 1rem;">
+                            <span style="font-weight: 800; color: var(--brand-primary);">01</span>
+                            <div><strong>The SDK:</strong> A lightweight instrumentation layer in Python or Go that ingests traces over Unix Sockets or TCP.</div>
+                        </li>
+                        <li style="margin-bottom: 1.5rem; display: flex; gap: 1rem;">
+                            <span style="font-weight: 800; color: var(--brand-primary);">02</span>
+                            <div><strong>The Daemon:</strong> A Go-based ingestion engine that batches and persists data into a local SQLite store.</div>
+                        </li>
+                        <li style="display: flex; gap: 1rem;">
+                            <span style="font-weight: 800; color: var(--brand-primary);">03</span>
+                            <div><strong>The Visualizer:</strong> A TUI (Terminal User Interface) or Web-based dashboard to explore thought traces.</div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="python">
+                <h2>Python SDK Usage</h2>
+                <p>Install the SDK via pip:</p>
+                <pre><code>pip install oculo-sdk</code></pre>
+                <p>Instrument your agent trace:</p>
+                <pre><code>from oculo import OculoTracer
+
+tracer = OculoTracer(agent_name="researcher-v1")
+
+with tracer.trace() as trace:
+    with trace.span("llm_call", operation_type="LLM") as span:
+        span.set_prompt("Who are you?")
+        # Agent logic here
+        span.set_completion("I am an AI assistant.")</code></pre>
+            </section>
+        </article>
+    </main>
+
+    <div data-component="footer"></div>
+
+    <script src="assets/js/main.js"></script>
+    <style>.nav-link-premium { text-decoration: none; color: var(--text-muted); font-weight: 500; transition: color 0.3s; }.nav-link-premium:hover { color: var(--text-main); }</style>
+</body>
+</html>

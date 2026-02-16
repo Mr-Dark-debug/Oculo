@@ -1,0 +1,61 @@
+<div class="bento-grid">
+    <!-- Main Feature: Memory Diffing -->
+    <div class="bento-item reveal" style="grid-column: span 8; grid-row: span 1;">
+        <div style="max-width: 400px;">
+            <div style="width: 48px; height: 48px; background: var(--brand-primary-glow); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--brand-primary); margin-bottom: 2rem;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+            </div>
+            <h3>Memory Mutation Diffing</h3>
+            <p style="margin-top: 1rem;">Capture granular state changes in real-time. Oculo tracks every modification to your agent's memory with Git-like diffs, allowing you to visualize "cognition drift" over thousands of steps.</p>
+        </div>
+        <div style="position: absolute; right: -2rem; bottom: -2rem; width: 300px; height: 200px; background: var(--bg-soft); border-radius: var(--radius-md); border: 1px solid var(--border-soft); padding: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; transform: rotate(-5deg);">
+            <div style="color: #10b981;">+ "goal": "Find recent LLM benchmarks"</div>
+            <div style="color: #ef4444;">- "goal": "Search for AI news"</div>
+            <div style="margin-top: 10px; color: var(--text-muted);">// Context window updated</div>
+        </div>
+    </div>
+
+    <!-- Feature: Prompt Tracking -->
+    <div class="bento-item reveal stagger-1" style="grid-column: span 4; grid-row: span 2; background: var(--text-main); color: white;">
+        <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; margin-bottom: 2rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+        </div>
+        <h3>Prompt Lineage</h3>
+        <p style="margin-top: 1rem; color: rgba(255,255,255,0.6);">Reconstruct the lineage of every prompt. See exactly how the context was built, what variables were injected, and how the model's history influenced the next response.</p>
+        <div style="margin-top: 3rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 1.5rem;">
+            <div style="font-size: 0.8rem; margin-bottom: 1rem;">
+                <div style="color: rgba(255,255,255,0.4);">INPUT</div>
+                <div>System v2.4</div>
+            </div>
+            <div style="font-size: 0.8rem;">
+                <div style="color: rgba(255,255,255,0.4);">REASONING</div>
+                <div>Chain-of-thought (Step 4)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feature: Tokens -->
+    <div class="bento-item reveal stagger-2" style="grid-column: span 4;">
+        <div style="width: 48px; height: 48px; background: rgba(14, 165, 233, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--brand-secondary); margin-bottom: 2rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        </div>
+        <h3>Token Hotspots</h3>
+        <p style="margin-top: 1rem;">Monitor costs at the function level. Identify which tools or modules are bloating your context and optimize for both speed and price.</p>
+    </div>
+
+    <!-- Feature: Local First -->
+    <div class="bento-item reveal stagger-3" style="grid-column: span 4;">
+        <div style="width: 48px; height: 48px; background: rgba(16, 185, 129, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #10b981; margin-bottom: 2rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        </div>
+        <h3>Privacy by Design</h3>
+        <p style="margin-top: 1rem;">Oculo is 100% local. Your traces never leave your machine unless you want them to. Zero dependencies on external cloud observability vendors.</p>
+    </div>
+</div>
+
+<style>
+    @media (max-width: 1024px) {
+        .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+        .bento-item { grid-column: span 1 !important; grid-row: span 1 !important; padding: 2rem; }
+    }
+</style>

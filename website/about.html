@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Oculo</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div class="mesh-bg"></div>
+
+    <nav class="nav-premium">
+        <a href="../index.html" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem; text-decoration: none; margin-left: 1rem;">
+            <div style="width: 28px; height: 28px; background: var(--text-main); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle></svg>
+            </div>
+            Oculo
+        </a>
+        <div style="flex: 1; display: flex; justify-content: center; gap: 2rem;">
+            <a href="docs.html" class="nav-link-premium">Docs</a>
+            <a href="installation.html" class="nav-link-premium">Install</a>
+            <a href="blog.html" class="nav-link-premium">Blog</a>
+        </div>
+        <div style="margin-right: 1rem;">
+            <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Star on GitHub</a>
+        </div>
+    </nav>
+
+    <header class="section" style="padding-top: 15rem;">
+        <div class="container text-center">
+            <h1 class="hero-title">The Glass Box Philosophy.</h1>
+            <p style="font-size: 1.5rem; color: var(--text-muted); max-width: 800px; margin: 3rem auto; line-height: 1.6;">
+                We believe AI agents shouldn't be black boxes. Reliability starts with <span style="color: var(--text-main); font-weight: 600;">transparency</span>.
+            </p>
+        </div>
+    </header>
+
+    <main class="container" style="padding-bottom: 10rem;">
+        <div class="bento-grid">
+            <div class="bento-item reveal" style="grid-column: span 12; display: flex; align-items: center; gap: 4rem;">
+                <div style="flex: 1;">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Why we built Oculo</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1.5rem;">The current observability stack was built for microservices — tracking request/response and latency. But AI agents are non-deterministic; they "think", they loop, and they mutate internal state over long-running tasks.</p>
+                    <p style="color: var(--text-muted); font-size: 1.1rem;">Oculo provides the instrumentation layer specifically for this cognitive process, allowing you to see inside the reasoning loop without sacrificing performance.</p>
+                </div>
+                <div style="flex: 1; height: 300px; background: var(--bg-soft); border-radius: var(--radius-md); border: 1px solid var(--border-soft); display: flex; align-items: center; justify-content: center;">
+                    <div style="width: 120px; height: 120px; border: 4px solid var(--brand-primary); border-radius: 20px; animation: spin 10s linear infinite;"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div data-component="footer"></div>
+
+    <script src="assets/js/main.js"></script>
+    <style>
+        .nav-link-premium { text-decoration: none; color: var(--text-muted); font-weight: 500; transition: color 0.3s; }
+        .nav-link-premium:hover { color: var(--text-main); }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    </style>
+</body>
+</html>
