@@ -362,3 +362,33 @@ This is not terminal art.
 This is developer instrumentation.
 
 Design it accordingly.
+
+Ask the ai to create a nice and beautiful and responsive and user friendly ux based terminal with colourful things not ai slops but professional things. And do tumse asci text and all. It doesn't look good.
+
+https://github.com/charmbracelet/huh
+
+https://github.com/charmbracelet/bubbletea
+
+Use these things and all and also create a nice and detailed banner for our project like this : "Generate an SVG code snippet for a GitHub README banner.
+
+Text: 'EPHEMERAL' in a bold, retro-futuristic sans-serif font (white text).
+
+Subtext: 'Transient Data. Permanent Privacy.' (grey text).
+
+Background: Deep black (#0d1117 matches GitHub dark mode).
+
+Style: Minimalist, cyber-security aesthetic with a thin border.
+
+Dimensions: 800x200 pixels."
+
+How to use the result:How to use the result:
+
+1. Copy the SVG code it gives you.
+
+
+2. Save it as banner.svg in your repo.
+
+
+3. Add it to your README: ! [Banner] (banner.svg)
+
+
