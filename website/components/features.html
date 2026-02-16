@@ -1,61 +1,132 @@
 <div class="bento-grid">
     <!-- Main Feature: Memory Diffing -->
-    <div class="bento-item reveal" style="grid-column: span 8; grid-row: span 1;">
-        <div style="max-width: 400px;">
-            <div style="width: 48px; height: 48px; background: var(--brand-primary-glow); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--brand-primary); margin-bottom: 2rem;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+    <div class="bento-item reveal" style="grid-column: span 8;">
+        <div style="display: flex; gap: 3rem; align-items: flex-start;">
+            <div style="flex: 1;">
+                <div class="icon-box" style="background: var(--brand-primary-glow); color: var(--brand-primary);">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                    </svg>
+                </div>
+                <h3 style="font-size: 1.35rem; margin-bottom: 0.75rem;">Memory Mutation Diffing</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">Capture granular state
+                    changes in real-time. Oculo tracks every modification to your agent's memory with Git-like diffs,
+                    allowing you to visualize "cognition drift" over thousands of steps.</p>
             </div>
-            <h3>Memory Mutation Diffing</h3>
-            <p style="margin-top: 1rem;">Capture granular state changes in real-time. Oculo tracks every modification to your agent's memory with Git-like diffs, allowing you to visualize "cognition drift" over thousands of steps.</p>
-        </div>
-        <div style="position: absolute; right: -2rem; bottom: -2rem; width: 300px; height: 200px; background: var(--bg-soft); border-radius: var(--radius-md); border: 1px solid var(--border-soft); padding: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; transform: rotate(-5deg);">
-            <div style="color: #10b981;">+ "goal": "Find recent LLM benchmarks"</div>
-            <div style="color: #ef4444;">- "goal": "Search for AI news"</div>
-            <div style="margin-top: 10px; color: var(--text-muted);">// Context window updated</div>
+            <div
+                style="flex-shrink: 0; width: 280px; background: var(--bg-soft); border-radius: var(--radius-sm); border: 1px solid var(--border-soft); padding: 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; transform: rotate(-3deg); margin-top: 1rem;">
+                <div style="color: #10b981; margin-bottom: 4px;">+ "goal": "Find LLM benchmarks"</div>
+                <div style="color: #ef4444; margin-bottom: 4px;">- "goal": "Search for AI news"</div>
+                <div style="color: #f59e0b; margin-bottom: 4px;">~ "steps": 3 → 5</div>
+                <div style="color: var(--text-faint); margin-top: 8px;"># Context window updated</div>
+            </div>
         </div>
     </div>
 
     <!-- Feature: Prompt Tracking -->
-    <div class="bento-item reveal stagger-1" style="grid-column: span 4; grid-row: span 2; background: var(--text-main); color: white;">
-        <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; margin-bottom: 2rem;">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+    <div class="bento-item reveal stagger-1"
+        style="grid-column: span 4; grid-row: span 2; background: var(--text-main); color: white;">
+        <div class="icon-box" style="background: rgba(255,255,255,0.1); color: white;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                </path>
+            </svg>
         </div>
-        <h3>Prompt Lineage</h3>
-        <p style="margin-top: 1rem; color: rgba(255,255,255,0.6);">Reconstruct the lineage of every prompt. See exactly how the context was built, what variables were injected, and how the model's history influenced the next response.</p>
-        <div style="margin-top: 3rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 1.5rem;">
-            <div style="font-size: 0.8rem; margin-bottom: 1rem;">
-                <div style="color: rgba(255,255,255,0.4);">INPUT</div>
-                <div>System v2.4</div>
+        <h3 style="font-size: 1.35rem; margin-bottom: 0.75rem;">Prompt Lineage</h3>
+        <p style="color: rgba(255,255,255,0.55); font-size: 0.95rem; line-height: 1.7;">Reconstruct the lineage of every
+            prompt. See exactly how the context was built, what variables were injected, and how the model's history
+            influenced the next response.</p>
+        <div
+            style="margin-top: auto; padding-top: 2rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 1.25rem;">
+            <div style="font-size: 0.78rem; margin-bottom: 0.75rem;">
+                <div
+                    style="color: rgba(255,255,255,0.35); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.65rem;">
+                    INPUT</div>
+                <div style="margin-top: 2px;">System v2.4 → Agent Memory</div>
             </div>
-            <div style="font-size: 0.8rem;">
-                <div style="color: rgba(255,255,255,0.4);">REASONING</div>
-                <div>Chain-of-thought (Step 4)</div>
+            <div style="font-size: 0.78rem; margin-bottom: 0.75rem;">
+                <div
+                    style="color: rgba(255,255,255,0.35); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.65rem;">
+                    REASONING</div>
+                <div style="margin-top: 2px;">Chain-of-thought (Step 4/7)</div>
+            </div>
+            <div style="font-size: 0.78rem;">
+                <div
+                    style="color: rgba(255,255,255,0.35); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.65rem;">
+                    OUTPUT</div>
+                <div style="margin-top: 2px;">1,247 tokens → Tool Call</div>
             </div>
         </div>
     </div>
 
-    <!-- Feature: Tokens -->
+    <!-- Feature: Token Hotspots -->
     <div class="bento-item reveal stagger-2" style="grid-column: span 4;">
-        <div style="width: 48px; height: 48px; background: rgba(14, 165, 233, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--brand-secondary); margin-bottom: 2rem;">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        <div class="icon-box" style="background: rgba(14, 165, 233, 0.1); color: var(--brand-secondary);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
         </div>
-        <h3>Token Hotspots</h3>
-        <p style="margin-top: 1rem;">Monitor costs at the function level. Identify which tools or modules are bloating your context and optimize for both speed and price.</p>
+        <h3 style="font-size: 1.35rem; margin-bottom: 0.75rem;">Token Hotspots</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">Monitor costs at the function level.
+            Identify which tools or modules are bloating your context and optimize for both speed and price.</p>
+        <!-- Mini bar chart -->
+        <div
+            style="margin-top: auto; padding-top: 1.5rem; display: flex; gap: 4px; align-items: flex-end; height: 48px;">
+            <div style="flex: 1; height: 30%; background: rgba(14,165,233,0.15); border-radius: 3px;"></div>
+            <div style="flex: 1; height: 65%; background: rgba(14,165,233,0.25); border-radius: 3px;"></div>
+            <div style="flex: 1; height: 100%; background: var(--brand-secondary); border-radius: 3px;"></div>
+            <div style="flex: 1; height: 45%; background: rgba(14,165,233,0.2); border-radius: 3px;"></div>
+            <div style="flex: 1; height: 20%; background: rgba(14,165,233,0.12); border-radius: 3px;"></div>
+            <div style="flex: 1; height: 55%; background: rgba(14,165,233,0.22); border-radius: 3px;"></div>
+        </div>
     </div>
 
-    <!-- Feature: Local First -->
+    <!-- Feature: Privacy -->
     <div class="bento-item reveal stagger-3" style="grid-column: span 4;">
-        <div style="width: 48px; height: 48px; background: rgba(16, 185, 129, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #10b981; margin-bottom: 2rem;">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        <div class="icon-box" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
         </div>
-        <h3>Privacy by Design</h3>
-        <p style="margin-top: 1rem;">Oculo is 100% local. Your traces never leave your machine unless you want them to. Zero dependencies on external cloud observability vendors.</p>
+        <h3 style="font-size: 1.35rem; margin-bottom: 0.75rem;">Privacy by Design</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">Oculo is 100% local. Your traces
+            never leave your machine unless you want them to. Zero dependencies on external cloud vendors.</p>
+        <div style="margin-top: auto; padding-top: 1.5rem;">
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <span
+                    style="padding: 0.25rem 0.7rem; background: rgba(16,185,129,0.08); color: #10b981; border-radius: 100px; font-size: 0.72rem; font-weight: 700;">SQLite</span>
+                <span
+                    style="padding: 0.25rem 0.7rem; background: rgba(16,185,129,0.08); color: #10b981; border-radius: 100px; font-size: 0.72rem; font-weight: 700;">WAL
+                    Mode</span>
+                <span
+                    style="padding: 0.25rem 0.7rem; background: rgba(16,185,129,0.08); color: #10b981; border-radius: 100px; font-size: 0.72rem; font-weight: 700;">FTS5</span>
+            </div>
+        </div>
     </div>
 </div>
 
 <style>
     @media (max-width: 1024px) {
-        .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
-        .bento-item { grid-column: span 1 !important; grid-row: span 1 !important; padding: 2rem; }
+        .bento-grid {
+            grid-template-columns: 1fr !important;
+        }
+
+        .bento-item {
+            grid-column: span 1 !important;
+            grid-row: span 1 !important;
+        }
+
+        .bento-item>div[style*="display: flex; gap: 3rem"] {
+            flex-direction: column;
+        }
+
+        .bento-item>div[style*="display: flex; gap: 3rem"]>div:last-child {
+            width: 100% !important;
+            transform: none !important;
+        }
     }
 </style>

@@ -1,11 +1,14 @@
 # Oculo Python SDK
 
-![Oculo Banner](https://raw.githubusercontent.com/Mr-Dark-debug/oculo/main/banner.svg)
+<p align="center">
+  <img src="../../banner.svg" alt="Oculo Banner" width="600">
+</p>
 
 <p align="center">
-  <a href="https://pypi.org/project/oculo-sdk/">
-    <img src="https://img.shields.io/pypi/v/oculo-sdk.svg" alt="PyPI version">
-  </a>
+  <a href="https://pypi.org/project/oculo-sdk/"><img src="https://img.shields.io/pypi/v/oculo-sdk.svg" alt="PyPI version"></a>
+  <a href="https://github.com/Mr-Dark-debug/Oculo"><img src="https://img.shields.io/github/stars/Mr-Dark-debug/Oculo?style=social" alt="GitHub stars"></a>
+  <a href="https://github.com/Mr-Dark-debug/Oculo/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Mr-Dark-debug/Oculo" alt="License"></a>
+  <img src="https://img.shields.io/pypi/pyversions/oculo-sdk.svg" alt="Python versions">
 </p>
 
 **Oculo** is a "Glass Box" for AI agents—a comprehensive observability tool that lets you see inside your agent's cognition. This SDK provides the Python instrumentation to capture traces, spans, and memory mutations and send them to the Oculo daemon.

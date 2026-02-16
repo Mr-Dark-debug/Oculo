@@ -1,89 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oculo | The Glass Box for AI Agents</title>
     <meta name="description" content="Debug AI Cognition. Not Just Code. Local-first observability for AI Agents.">
-    
     <link rel="icon" type="image/svg+xml" href="banner.svg">
     <link rel="stylesheet" href="website/assets/css/styles.css">
 </head>
-<body>
-    <div class="mesh-bg"></div>
 
+<body>
+
+    <!-- ─── Navbar ─────────────────────── -->
     <nav class="nav-premium">
-        <a href="#" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem; text-decoration: none; margin-left: 1rem;">
-            <div style="width: 28px; height: 28px; background: var(--text-main); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle></svg>
+        <a href="#" class="nav-logo-container">
+            <div class="nav-logo-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <circle cx="12" cy="12" r="10"></circle>
+                </svg>
             </div>
             Oculo
         </a>
-        
-        <div style="flex: 1; display: flex; justify-content: center; gap: 2rem;">
+        <div class="nav-links-container">
             <a href="website/docs.html" class="nav-link-premium">Docs</a>
             <a href="website/installation.html" class="nav-link-premium">Install</a>
             <a href="#features" class="nav-link-premium">Features</a>
             <a href="website/blog.html" class="nav-link-premium">Blog</a>
+            <a href="website/about.html" class="nav-link-premium">About</a>
         </div>
-
-        <div style="margin-right: 1rem;">
-            <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Star on GitHub</a>
+        <div class="nav-cta-wrap">
+            <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium"
+                style="padding: 0.5rem 1.1rem; font-size: 0.8rem;">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
+                Star on GitHub
+            </a>
         </div>
     </nav>
 
     <main>
-        <!-- Dynamic Hero -->
-        <div data-component="hero"></div>
+        <!-- ─── HERO ─────────────────────── -->
+        <section class="hero-wave-bg" style="padding: 9rem 0 7rem;">
+            <div class="hero-blob hero-blob--1"></div>
+            <div class="hero-blob hero-blob--2"></div>
+            <div class="hero-blob hero-blob--3"></div>
 
-        <!-- Social Proof / Stats -->
-        <section class="container" style="margin-top: -4rem;">
-            <div class="glass" style="padding: 3rem; border-radius: var(--radius-lg); text-align: center;">
-                <div data-component="stats"></div>
+            <div class="container"
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 2;">
+                <div class="reveal">
+                    <div class="badge-pill" style="margin-bottom: 1.5rem;">
+                        <span class="badge-dot"></span>
+                        v0.1.0 Alpha is Live
+                    </div>
+                    <h1 class="hero-title">
+                        Debug AI cognition,<br>
+                        not just <span class="accent">code.</span>
+                    </h1>
+                    <p
+                        style="font-size: 1.15rem; color: var(--text-muted); margin: 1.5rem 0 2.5rem; max-width: 480px; line-height: 1.7;">
+                        Oculo is the <strong style="color: var(--text-main);">Glass Box</strong> for AI Agents. Inspect
+                        memory mutations, token flow, and prompt evolution — all local, all real-time.
+                    </p>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="website/installation.html" class="btn-premium btn-lg">
+                            Get Started Free →
+                        </a>
+                        <a href="website/docs.html" class="btn-premium btn-secondary btn-lg">
+                            Read Docs
+                        </a>
+                    </div>
+                </div>
+
+                <div class="reveal stagger-2" style="perspective: 1000px;">
+                    <div class="terminal-premium"
+                        style="transform: rotateY(-8deg) rotateX(4deg); transition: transform 0.6s ease;">
+                        <div class="terminal-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div id="hero-code" style="line-height: 1.8; min-height: 120px;">
+                            <!-- Typed by JS -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Bento Grid Features -->
+        <!-- ─── Stats Bar ────────────────── -->
+        <section style="padding: 3rem 0; border-bottom: 1px solid var(--border-soft);">
+            <div class="container">
+                <div class="stats-row" data-component="stats"></div>
+            </div>
+        </section>
+
+        <!-- ─── Features ─────────────────── -->
         <section id="features" class="section">
             <div class="container">
-                <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
-                    <h2 style="font-size: 3.5rem; margin-bottom: 1rem;">Engineered for Clarity.</h2>
-                    <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto;">Everything you need to stop guessing why your agents are hallucinating or looping.</p>
+                <div class="reveal text-center" style="margin-bottom: 4rem;">
+                    <span class="section-label">Features</span>
+                    <h2 class="section-title">Engineered for Clarity.</h2>
+                    <p class="section-subtitle" style="margin: 0 auto;">Everything you need to stop guessing why your
+                        agents are hallucinating or looping.</p>
                 </div>
-                
                 <div data-component="features"></div>
             </div>
         </section>
 
-        <!-- Dynamic GitHub Stats -->
-        <section class="section" style="background: var(--bg-soft); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft);">
+        <!-- ─── How it Works ─────────────── -->
+        <section class="section"
+            style="background: var(--bg-soft); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft);">
+            <div class="container">
+                <div class="reveal text-center" style="margin-bottom: 4rem;">
+                    <span class="section-label">How It Works</span>
+                    <h2 class="section-title">Three layers. Zero friction.</h2>
+                    <p class="section-subtitle" style="margin: 0 auto;">Oculo follows a local-first, high-throughput
+                        design built for AI agent workflows.</p>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                    <div class="card reveal">
+                        <div
+                            style="font-size: 2.5rem; font-weight: 800; color: rgba(99,102,241,0.15); font-family: 'Space Grotesk', sans-serif; margin-bottom: 1rem;">
+                            01</div>
+                        <h3 style="margin-bottom: 0.75rem;">The SDK</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">A lightweight instrumentation layer in
+                            Python or Go. Wrap your agent code in traces and spans — never blocks execution.</p>
+                    </div>
+                    <div class="card reveal stagger-1">
+                        <div
+                            style="font-size: 2.5rem; font-weight: 800; color: rgba(99,102,241,0.15); font-family: 'Space Grotesk', sans-serif; margin-bottom: 1rem;">
+                            02</div>
+                        <h3 style="margin-bottom: 0.75rem;">The Daemon</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">A Go-based ingestion engine that
+                            batches and persists data into a local SQLite store. Sub-millisecond overhead.</p>
+                    </div>
+                    <div class="card reveal stagger-2">
+                        <div
+                            style="font-size: 2.5rem; font-weight: 800; color: rgba(99,102,241,0.15); font-family: 'Space Grotesk', sans-serif; margin-bottom: 1rem;">
+                            03</div>
+                        <h3 style="margin-bottom: 0.75rem;">The Visualizer</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">A TUI or Web dashboard to explore
+                            thought traces, memory diffs, and token analytics in real-time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── Code Example ─────────────── -->
+        <section class="section">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                    <div class="reveal">
+                        <span class="section-label">Quick Start</span>
+                        <h2 class="section-title">Instrument in 4 lines.</h2>
+                        <p class="section-subtitle" style="margin-bottom: 2rem;">Wrap your agent's execution in a trace.
+                            Wrap individual steps in spans. That's it — Oculo handles the rest.</p>
+                        <div style="display: flex; gap: 2rem; margin-top: 1.5rem;">
+                            <div>
+                                <div
+                                    style="font-size: 2rem; font-weight: 800; font-family: 'Space Grotesk',sans-serif; color: var(--text-main);">
+                                    &lt;1ms</div>
+                                <div
+                                    style="font-size: 0.75rem; color: var(--text-faint); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em;">
+                                    Overhead</div>
+                            </div>
+                            <div>
+                                <div
+                                    style="font-size: 2rem; font-weight: 800; font-family: 'Space Grotesk',sans-serif; color: var(--text-main);">
+                                    10K+</div>
+                                <div
+                                    style="font-size: 0.75rem; color: var(--text-faint); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em;">
+                                    Spans/sec</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reveal stagger-1">
+                        <div class="terminal-premium">
+                            <div class="terminal-dots"><span></span><span></span><span></span></div>
+                            <pre
+                                style="margin: 0; color: #e2e8f0; font-size: 0.82rem; line-height: 1.8; overflow-x: auto;"><span style="color:#818cf8">from</span> oculo <span style="color:#818cf8">import</span> OculoTracer
+
+tracer = OculoTracer(<span style="color:#f59e0b">agent_name</span>=<span style="color:#a5f3fc">"researcher-v1"</span>)
+
+<span style="color:#818cf8">with</span> tracer.trace() <span style="color:#818cf8">as</span> t:
+    <span style="color:#818cf8">with</span> t.span(<span style="color:#a5f3fc">"llm_call"</span>) <span style="color:#818cf8">as</span> s:
+        s.set_prompt(<span style="color:#a5f3fc">"Who are you?"</span>)
+        <span style="color:#64748b"># Agent logic here...</span>
+        s.set_completion(<span style="color:#a5f3fc">"I am an AI."</span>)</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── GitHub Stats ─────────────── -->
+        <section class="section"
+            style="background: var(--bg-soft); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft);">
             <div class="container">
                 <div data-component="github-stats"></div>
             </div>
         </section>
 
-        <!-- Contributors -->
+        <!-- ─── What You Get ─────────────── -->
         <section class="section">
-            <div class="container text-center">
-                <h2 style="font-size: 3rem; margin-bottom: 4rem;">Built by Developers.</h2>
-                <div id="contributors-scroll" class="flex" style="justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                    <!-- Injected -->
+            <div class="container">
+                <div class="reveal text-center" style="margin-bottom: 4rem;">
+                    <span class="section-label">Capabilities</span>
+                    <h2 class="section-title">Everything your agents need.</h2>
+                    <p class="section-subtitle" style="margin: 0 auto;">From basic span tracking to advanced memory
+                        regression analysis.</p>
                 </div>
-                <div style="margin-top: 4rem;">
-                    <a href="website/contributors.html" style="color: var(--brand-primary); font-weight: 600; text-decoration: none;">Meet the full team â†’</a>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+                    <div class="card reveal" style="text-align: center; padding: 2rem;">
+                        <div style="font-size: 1.75rem; margin-bottom: 1rem;">🌳</div>
+                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Span Timeline</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Tree view of every operation your agent
+                            performs</p>
+                    </div>
+                    <div class="card reveal stagger-1" style="text-align: center; padding: 2rem;">
+                        <div style="font-size: 1.75rem; margin-bottom: 1rem;">🧠</div>
+                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Memory Diffs</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Unified diff view of memory mutations
+                            across spans</p>
+                    </div>
+                    <div class="card reveal stagger-2" style="text-align: center; padding: 2rem;">
+                        <div style="font-size: 1.75rem; margin-bottom: 1rem;">📊</div>
+                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Token Analysis</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Per-span and trace-level token usage
+                            with visual bars</p>
+                    </div>
+                    <div class="card reveal stagger-3" style="text-align: center; padding: 2rem;">
+                        <div style="font-size: 1.75rem; margin-bottom: 1rem;">🚨</div>
+                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Anomaly Detection</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Z-score based token hotspot detection
+                        </p>
+                    </div>
+                    <div class="card reveal" style="text-align: center; padding: 2rem;">
+                        <div style="font-size: 1.75rem; margin-bottom: 1rem;">📈</div>
+                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Memory Growth</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Linear regression to detect unbounded
+                            state accumulation</p>
+                    </div>
+                    <div class="card reveal stagger-1" style="text-align: center; padding: 2rem;">
+                        <div style="font-size: 1.75rem; margin-bottom: 1rem;">💰</div>
+                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Cost Attribution</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Per-model cost breakdown using
+                            configurable pricing</p>
+                    </div>
+                    <div class="card reveal stagger-2" style="text-align: center; padding: 2rem;">
+                        <div style="font-size: 1.75rem; margin-bottom: 1rem;">🔍</div>
+                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Full-Text Search</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">FTS5-powered search over prompts and
+                            completions</p>
+                    </div>
+                    <div class="card reveal stagger-3" style="text-align: center; padding: 2rem;">
+                        <div style="font-size: 1.75rem; margin-bottom: 1rem;">🛡️</div>
+                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Crash Recovery</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">WAL journal with pending write recovery
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA -->
-        <section class="section" style="padding-top: 5rem;">
+        <!-- ─── Contributors ─────────────── -->
+        <section class="section" style="background: var(--bg-soft); border-top: 1px solid var(--border-soft);">
+            <div class="container text-center">
+                <span class="section-label">Community</span>
+                <h2 class="section-title" style="margin-bottom: 3rem;">Built by Developers.</h2>
+                <div id="contributors-scroll"
+                    style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap;"></div>
+                <div style="margin-top: 2.5rem;">
+                    <a href="website/contributors.html"
+                        style="color: var(--brand-primary); font-weight: 600; font-size: 0.9rem;">Meet the full team
+                        →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── CTA ──────────────────────── -->
+        <section class="section">
             <div class="container">
-                <div style="background: var(--text-main); color: white; border-radius: var(--radius-lg); padding: 5rem; text-align: center; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at center, rgba(99, 102, 241, 0.2) 0%, transparent 50%); pointer-events: none;"></div>
-                    <h2 style="font-size: 3.5rem; margin-bottom: 1.5rem; position: relative;">Ready to Open the Box?</h2>
-                    <p style="font-size: 1.25rem; color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto 3rem; position: relative;">Join hundreds of AI engineers building more reliable agentic systems with Oculo.</p>
-                    <div style="position: relative;">
-                        <a href="website/installation.html" class="btn-premium" style="background: white; color: var(--text-main);">Get Started for Free</a>
+                <div
+                    style="background: var(--text-main); color: white; border-radius: var(--radius-lg); padding: 4.5rem; text-align: center; position: relative; overflow: hidden;">
+                    <div
+                        style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at center, rgba(99, 102, 241, 0.2) 0%, transparent 50%); pointer-events: none;">
+                    </div>
+                    <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; position: relative;">Ready to
+                        Open the Box?</h2>
+                    <p
+                        style="font-size: 1.1rem; color: rgba(255,255,255,0.6); max-width: 500px; margin: 0 auto 2.5rem; position: relative;">
+                        Join AI engineers building more reliable agentic systems with Oculo.</p>
+                    <div
+                        style="position: relative; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="website/installation.html" class="btn-premium"
+                            style="background: white; color: var(--text-main);">Get Started Free</a>
+                        <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium"
+                            style="background: transparent; border: 1.5px solid rgba(255,255,255,0.3);">View on
+                            GitHub</a>
                     </div>
                 </div>
             </div>
@@ -94,31 +309,54 @@
 
     <script src="website/assets/js/main.js"></script>
     <style>
-        .nav-link-premium {
-            text-decoration: none;
-            color: var(--text-muted);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-        .nav-link-premium:hover {
-            color: var(--text-main);
-        }
-        @media (max-width: 768px) {
-            .nav-link-premium { display: none; }
-        }
         .avatar-link img {
-            width: 56px;
-            height: 56px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             border: 2px solid white;
-            box-shadow: var(--shadow-card);
+            box-shadow: var(--shadow-sm);
             transition: transform 0.3s ease;
         }
+
         .avatar-link:hover img {
-            transform: scale(1.1) translateY(-5px);
+            transform: scale(1.15) translateY(-4px);
             border-color: var(--brand-primary);
+        }
+
+        @media (max-width: 1024px) {
+            .hero-wave-bg .container {
+                grid-template-columns: 1fr !important;
+                text-align: center;
+            }
+
+            .hero-wave-bg .container>.reveal:last-child {
+                display: none;
+            }
+
+            .hero-wave-bg .container>.reveal p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-wave-bg .container>.reveal div:last-child {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section .container>div[style*="grid-template-columns: repeat(3"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            section .container>div[style*="grid-template-columns: repeat(4"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            section .container>div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+            }
         }
     </style>
 </body>
+
 </html>

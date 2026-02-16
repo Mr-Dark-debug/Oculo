@@ -1,82 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roadmap | Oculo</title>
+    <meta name="description" content="The Oculo roadmap to 1.0 and beyond.">
     <link rel="stylesheet" href="assets/css/styles.css">
     <style>
-        .timeline-premium { position: relative; max-width: 800px; margin: 4rem auto; padding: 2rem 0; }
-        .timeline-premium::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: var(--border-soft); }
-        .timeline-event { position: relative; padding-left: 3rem; margin-bottom: 6rem; }
-        .timeline-dot { position: absolute; left: -5px; top: 0; width: 11px; height: 11px; background: white; border: 2px solid var(--brand-primary); border-radius: 50%; z-index: 1; transition: all 0.3s; }
-        .timeline-event:hover .timeline-dot { transform: scale(1.5); background: var(--brand-primary); box-shadow: 0 0 20px var(--brand-primary-glow); }
-        .timeline-tag { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 100px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; margin-bottom: 1rem; letter-spacing: 0.1em; }
-        .tag-completed { background: rgba(16, 185, 129, 0.1); color: #10b981; }
-        .tag-active { background: rgba(99, 102, 241, 0.1); color: var(--brand-primary); }
-        .tag-future { background: var(--bg-soft); color: var(--text-faint); }
+        .timeline {
+            position: relative;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 16px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-soft);
+        }
+
+        .timeline-event {
+            position: relative;
+            padding-left: 3.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 8px;
+            top: 4px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: var(--shadow-sm);
+            z-index: 1;
+        }
+
+        .timeline-dot.completed {
+            background: #10b981;
+        }
+
+        .timeline-dot.active {
+            background: var(--brand-primary);
+            animation: pulse 2s infinite;
+        }
+
+        .timeline-dot.future {
+            background: var(--border-strong);
+        }
+
+        .timeline-tag {
+            display: inline-block;
+            padding: 0.2rem 0.65rem;
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+
+        .tag-completed {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+        }
+
+        .tag-active {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--brand-primary);
+        }
+
+        .tag-future {
+            background: var(--bg-soft);
+            color: var(--text-faint);
+        }
     </style>
 </head>
+
 <body>
-    <div class="mesh-bg"></div>
     <nav class="nav-premium">
-        <a href="../index.html" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem; text-decoration: none; margin-left: 1rem;">
-            <div style="width: 28px; height: 28px; background: var(--text-main); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle></svg>
+        <a href="../index.html" class="nav-logo-container">
+            <div class="nav-logo-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <circle cx="12" cy="12" r="10"></circle>
+                </svg>
             </div>
             Oculo
         </a>
-        <div style="flex: 1; display: flex; justify-content: center; gap: 2rem;">
+        <div class="nav-links-container">
             <a href="docs.html" class="nav-link-premium">Docs</a>
             <a href="installation.html" class="nav-link-premium">Install</a>
             <a href="blog.html" class="nav-link-premium">Blog</a>
         </div>
-        <div style="margin-right: 1rem;">
-            <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Star on GitHub</a>
+        <div class="nav-cta-wrap">
+            <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium"
+                style="padding: 0.5rem 1.1rem; font-size: 0.8rem;">Star on GitHub</a>
         </div>
     </nav>
 
-    <header class="section" style="padding-top: 15rem;">
-        <div class="container text-center">
-            <h1 class="hero-title" style="font-size: 4rem;">The Future is Clear.</h1>
-            <p style="font-size: 1.25rem; color: var(--text-muted); margin-top: 2rem;">The roadmap to 1.0 and beyond.</p>
+    <div class="page-hero">
+        <div class="container">
+            <h1 class="hero-title">The Future is Clear.</h1>
+            <p>The roadmap to 1.0 and beyond.</p>
         </div>
-    </header>
+    </div>
 
-    <main class="container" style="padding-bottom: 10rem;">
-        <div class="timeline-premium">
+    <main class="container" style="padding-bottom: 6rem;">
+        <div class="timeline">
             <div class="timeline-event reveal">
-                <div class="timeline-dot"></div>
+                <div class="timeline-dot completed"></div>
                 <span class="timeline-tag tag-completed">Released</span>
-                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">v0.1.0 Alpha — Core Runtime</h3>
-                <div class="bento-item">
-                    <p style="color: var(--text-muted);">The initial release of the Oculo core daemon in Go. High-performance ingestion over UDS/TCP, SQLite persistence, and Python SDK support.</p>
+                <h3 style="font-size: 1.35rem; margin-bottom: 0.75rem;">v0.1.0 Alpha — Core Runtime</h3>
+                <div class="card" style="padding: 1.5rem;">
+                    <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.7; margin-bottom: 1rem;">The
+                        initial release of the Oculo core daemon in Go. High-performance ingestion over UDS/TCP, SQLite
+                        persistence, and Python SDK support.</p>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <span
+                            style="padding: 0.2rem 0.6rem; background: var(--bg-soft); border-radius: 100px; font-size: 0.7rem; color: var(--text-faint); font-weight: 600;">Go
+                            Daemon</span>
+                        <span
+                            style="padding: 0.2rem 0.6rem; background: var(--bg-soft); border-radius: 100px; font-size: 0.7rem; color: var(--text-faint); font-weight: 600;">Python
+                            SDK</span>
+                        <span
+                            style="padding: 0.2rem 0.6rem; background: var(--bg-soft); border-radius: 100px; font-size: 0.7rem; color: var(--text-faint); font-weight: 600;">SQLite
+                            + WAL</span>
+                        <span
+                            style="padding: 0.2rem 0.6rem; background: var(--bg-soft); border-radius: 100px; font-size: 0.7rem; color: var(--text-faint); font-weight: 600;">Memory
+                            Diffs</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="timeline-event reveal">
-                <div class="timeline-dot"></div>
+            <div class="timeline-event reveal stagger-1">
+                <div class="timeline-dot active"></div>
                 <span class="timeline-tag tag-active">In Development</span>
-                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">v0.2.0 — TUI Visualizer</h3>
-                <div class="bento-item" style="border-color: var(--brand-primary);">
-                    <p style="color: var(--text-muted);">Introducing the Terminal User Interface for real-time trace inspection, interactive memory diffing, and timeline navigation.</p>
+                <h3 style="font-size: 1.35rem; margin-bottom: 0.75rem;">v0.2.0 — TUI Visualizer</h3>
+                <div class="card" style="padding: 1.5rem; border-color: rgba(99,102,241,0.3);">
+                    <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.7; margin-bottom: 1rem;">
+                        Introducing the Terminal User Interface for real-time trace inspection, interactive memory
+                        diffing, and timeline navigation.</p>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <span
+                            style="padding: 0.2rem 0.6rem; background: rgba(99,102,241,0.08); border-radius: 100px; font-size: 0.7rem; color: var(--brand-primary); font-weight: 600;">BubbleTea
+                            TUI</span>
+                        <span
+                            style="padding: 0.2rem 0.6rem; background: rgba(99,102,241,0.08); border-radius: 100px; font-size: 0.7rem; color: var(--brand-primary); font-weight: 600;">Span
+                            Timeline</span>
+                        <span
+                            style="padding: 0.2rem 0.6rem; background: rgba(99,102,241,0.08); border-radius: 100px; font-size: 0.7rem; color: var(--brand-primary); font-weight: 600;">Token
+                            Bars</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="timeline-event reveal">
-                <div class="timeline-dot"></div>
+            <div class="timeline-event reveal stagger-2">
+                <div class="timeline-dot future"></div>
                 <span class="timeline-tag tag-future">Q3 2026</span>
-                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">v0.3.0 — Semantic Layer</h3>
-                <div class="bento-item">
-                    <p style="color: var(--text-muted);">Adding automated embedding generation for trace spans. Enable semantic search and clustering to detect recurring agent failure patterns.</p>
+                <h3 style="font-size: 1.35rem; margin-bottom: 0.75rem;">v0.3.0 — Semantic Layer</h3>
+                <div class="card" style="padding: 1.5rem;">
+                    <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.7; margin-bottom: 1rem;">
+                        Adding automated embedding generation for trace spans. Enable semantic search and clustering to
+                        detect recurring agent failure patterns.</p>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <span
+                            style="padding: 0.2rem 0.6rem; background: var(--bg-soft); border-radius: 100px; font-size: 0.7rem; color: var(--text-faint); font-weight: 600;">Embeddings</span>
+                        <span
+                            style="padding: 0.2rem 0.6rem; background: var(--bg-soft); border-radius: 100px; font-size: 0.7rem; color: var(--text-faint); font-weight: 600;">Semantic
+                            Search</span>
+                        <span
+                            style="padding: 0.2rem 0.6rem; background: var(--bg-soft); border-radius: 100px; font-size: 0.7rem; color: var(--text-faint); font-weight: 600;">Clustering</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-event reveal stagger-3">
+                <div class="timeline-dot future"></div>
+                <span class="timeline-tag tag-future">Q4 2026</span>
+                <h3 style="font-size: 1.35rem; margin-bottom: 0.75rem;">v1.0.0 — Production Ready</h3>
+                <div class="card" style="padding: 1.5rem;">
+                    <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.7; margin-bottom: 1rem;">
+                        Stable APIs, comprehensive documentation, multi-language SDK support, and a web-based dashboard
+                        for teams.</p>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <span
+                            style="padding: 0.2rem 0.6rem; background: var(--bg-soft); border-radius: 100px; font-size: 0.7rem; color: var(--text-faint); font-weight: 600;">Stable
+                            API</span>
+                        <span
+                            style="padding: 0.2rem 0.6rem; background: var(--bg-soft); border-radius: 100px; font-size: 0.7rem; color: var(--text-faint); font-weight: 600;">Web
+                            UI</span>
+                        <span
+                            style="padding: 0.2rem 0.6rem; background: var(--bg-soft); border-radius: 100px; font-size: 0.7rem; color: var(--text-faint); font-weight: 600;">Multi-lang
+                            SDKs</span>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 
     <div data-component="footer"></div>
-
     <script src="assets/js/main.js"></script>
-    <style>.nav-link-premium { text-decoration: none; color: var(--text-muted); font-weight: 500; transition: color 0.3s; }.nav-link-premium:hover { color: var(--text-main); }</style>
 </body>
+
 </html>

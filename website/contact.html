@@ -1,65 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Oculo</title>
+    <meta name="description" content="Get in touch with the Oculo team — feedback, support, or partnerships.">
     <link rel="stylesheet" href="assets/css/styles.css">
     <style>
-        .contact-card-premium { background: white; border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 4rem; text-align: center; transition: all 0.4s ease; box-shadow: var(--shadow-card); text-decoration: none; color: inherit; }
-        .contact-card-premium:hover { transform: translateY(-10px); border-color: var(--brand-primary); box-shadow: var(--shadow-floating); }
-        .contact-icon { font-size: 3rem; margin-bottom: 2rem; display: block; }
+        .contact-card {
+            background: white;
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            text-align: center;
+            transition: all 0.35s ease;
+            box-shadow: var(--shadow-sm);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(99, 102, 241, 0.3);
+            box-shadow: var(--shadow-floating);
+        }
+
+        .contact-card .icon-wrap {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
     </style>
 </head>
+
 <body>
-    <div class="mesh-bg"></div>
     <nav class="nav-premium">
-        <a href="../index.html" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem; text-decoration: none; margin-left: 1rem;">
-            <div style="width: 28px; height: 28px; background: var(--text-main); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle></svg>
+        <a href="../index.html" class="nav-logo-container">
+            <div class="nav-logo-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <circle cx="12" cy="12" r="10"></circle>
+                </svg>
             </div>
             Oculo
         </a>
-        <div style="flex: 1; display: flex; justify-content: center; gap: 2rem;">
+        <div class="nav-links-container">
             <a href="docs.html" class="nav-link-premium">Docs</a>
             <a href="installation.html" class="nav-link-premium">Install</a>
             <a href="blog.html" class="nav-link-premium">Blog</a>
         </div>
-        <div style="margin-right: 1rem;">
-            <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Star on GitHub</a>
+        <div class="nav-cta-wrap">
+            <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium"
+                style="padding: 0.5rem 1.1rem; font-size: 0.8rem;">Star on GitHub</a>
         </div>
     </nav>
 
-    <header class="section" style="padding-top: 15rem;">
-        <div class="container text-center">
-            <h1 class="hero-title" style="font-size: 4rem;">Get in Touch.</h1>
-            <p style="font-size: 1.25rem; color: var(--text-muted); margin-top: 2rem;">Feedback, support, or just to talk AI tracing.</p>
+    <div class="page-hero">
+        <div class="container">
+            <h1 class="hero-title">Get in Touch.</h1>
+            <p>Feedback, support, partnerships, or just to talk about AI tracing.</p>
         </div>
-    </header>
+    </div>
 
-    <main class="container" style="padding-bottom: 10rem;">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem;">
-            <a href="https://github.com/Mr-Dark-debug/Oculo/issues" class="contact-card-premium reveal">
-                <span class="contact-icon">🛠️</span>
+    <main class="container" style="padding-bottom: 6rem;">
+        <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 4rem;">
+            <a href="https://github.com/Mr-Dark-debug/Oculo/issues" class="contact-card reveal">
+                <div class="icon-wrap" style="background: var(--brand-primary-glow);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)"
+                        stroke-width="2">
+                        <path
+                            d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                        </path>
+                    </svg>
+                </div>
                 <h3>GitHub Issues</h3>
-                <p style="color: var(--text-muted); margin-top: 1rem;">Report bugs, suggest features, or contribute to the core Go daemon.</p>
+                <p>Report bugs, suggest features, or contribute to the core Go daemon and Python SDK.</p>
             </a>
-            <a href="https://x.com/oculo_dev" class="contact-card-premium reveal stagger-1">
-                <span class="contact-icon">🐦</span>
+            <a href="https://x.com/oculo_dev" class="contact-card reveal stagger-1">
+                <div class="icon-wrap" style="background: rgba(14,165,233,0.1);">
+                    <svg width="22" height="22" fill="var(--brand-secondary)" viewBox="0 0 24 24">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                </div>
                 <h3>Twitter / X</h3>
-                <p style="color: var(--text-muted); margin-top: 1rem;">Get real-time updates on development and upcoming release candidates.</p>
+                <p>Get real-time updates on development progress and upcoming release candidates.</p>
             </a>
-            <a href="mailto:hello@oculo.dev" class="contact-card-premium reveal stagger-2">
-                <span class="contact-icon">📧</span>
+            <a href="mailto:hello@oculo.dev" class="contact-card reveal stagger-2">
+                <div class="icon-wrap" style="background: rgba(16,185,129,0.1);">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                </div>
                 <h3>Email</h3>
-                <p style="color: var(--text-muted); margin-top: 1rem;">Direct line for partnership inquiries, security reports, or private support.</p>
+                <p>Direct line for partnership inquiries, security reports, or private support requests.</p>
             </a>
+        </div>
+
+        <!-- FAQ -->
+        <div style="max-width: 680px; margin: 0 auto;">
+            <div class="reveal text-center" style="margin-bottom: 3rem;">
+                <span class="section-label">FAQ</span>
+                <h2 class="section-title">Common Questions.</h2>
+            </div>
+            <div class="card reveal" style="margin-bottom: 1rem; padding: 1.75rem;">
+                <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Is Oculo free?</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7;">Yes. Oculo is fully open
+                    source under the MIT license. There are no paid tiers or premium features.</p>
+            </div>
+            <div class="card reveal stagger-1" style="margin-bottom: 1rem; padding: 1.75rem;">
+                <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Does Oculo send data to the cloud?</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7;">Never. All data stays on your
+                    local machine in a SQLite database. There is no telemetry, analytics, or outbound network calls.</p>
+            </div>
+            <div class="card reveal stagger-2" style="margin-bottom: 1rem; padding: 1.75rem;">
+                <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">What languages are supported?</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7;">Currently Python and Go.
+                    JavaScript/TypeScript and Rust SDKs are planned for v1.0.</p>
+            </div>
+            <div class="card reveal stagger-3" style="padding: 1.75rem;">
+                <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">How do I contribute?</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7;">Fork the repo, find an open
+                    issue, and submit a pull request. We welcome contributions to the daemon, SDKs, TUI, and
+                    documentation.</p>
+            </div>
         </div>
     </main>
 
     <div data-component="footer"></div>
-
     <script src="assets/js/main.js"></script>
-    <style>.nav-link-premium { text-decoration: none; color: var(--text-muted); font-weight: 500; transition: color 0.3s; }.nav-link-premium:hover { color: var(--text-main); }</style>
 </body>
+
 </html>

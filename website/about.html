@@ -1,62 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Oculo</title>
+    <meta name="description" content="The philosophy behind Oculo — why AI agents need a Glass Box.">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
-    <div class="mesh-bg"></div>
 
+<body>
     <nav class="nav-premium">
-        <a href="../index.html" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem; text-decoration: none; margin-left: 1rem;">
-            <div style="width: 28px; height: 28px; background: var(--text-main); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle></svg>
+        <a href="../index.html" class="nav-logo-container">
+            <div class="nav-logo-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <circle cx="12" cy="12" r="10"></circle>
+                </svg>
             </div>
             Oculo
         </a>
-        <div style="flex: 1; display: flex; justify-content: center; gap: 2rem;">
+        <div class="nav-links-container">
             <a href="docs.html" class="nav-link-premium">Docs</a>
             <a href="installation.html" class="nav-link-premium">Install</a>
             <a href="blog.html" class="nav-link-premium">Blog</a>
         </div>
-        <div style="margin-right: 1rem;">
-            <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Star on GitHub</a>
+        <div class="nav-cta-wrap">
+            <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium"
+                style="padding: 0.5rem 1.1rem; font-size: 0.8rem;">Star on GitHub</a>
         </div>
     </nav>
 
-    <header class="section" style="padding-top: 15rem;">
-        <div class="container text-center">
-            <h1 class="hero-title">The Glass Box Philosophy.</h1>
-            <p style="font-size: 1.5rem; color: var(--text-muted); max-width: 800px; margin: 3rem auto; line-height: 1.6;">
-                We believe AI agents shouldn't be black boxes. Reliability starts with <span style="color: var(--text-main); font-weight: 600;">transparency</span>.
-            </p>
+    <div class="page-hero">
+        <div class="container">
+            <h1 class="hero-title">Why Oculo Exists.</h1>
+            <p>AI agents are growing more capable — and harder to understand. Oculo changes that.</p>
         </div>
-    </header>
+    </div>
 
-    <main class="container" style="padding-bottom: 10rem;">
-        <div class="bento-grid">
-            <div class="bento-item reveal" style="grid-column: span 12; display: flex; align-items: center; gap: 4rem;">
-                <div style="flex: 1;">
-                    <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Why we built Oculo</h2>
-                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1.5rem;">The current observability stack was built for microservices — tracking request/response and latency. But AI agents are non-deterministic; they "think", they loop, and they mutate internal state over long-running tasks.</p>
-                    <p style="color: var(--text-muted); font-size: 1.1rem;">Oculo provides the instrumentation layer specifically for this cognitive process, allowing you to see inside the reasoning loop without sacrificing performance.</p>
-                </div>
-                <div style="flex: 1; height: 300px; background: var(--bg-soft); border-radius: var(--radius-md); border: 1px solid var(--border-soft); display: flex; align-items: center; justify-content: center;">
-                    <div style="width: 120px; height: 120px; border: 4px solid var(--brand-primary); border-radius: 20px; animation: spin 10s linear infinite;"></div>
+    <main style="padding-bottom: 6rem;">
+        <!-- Mission -->
+        <section class="section">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+                    <div class="reveal">
+                        <span class="section-label">Our Mission</span>
+                        <h2 class="section-title">Transparency in<br>autonomous systems.</h2>
+                        <p class="section-subtitle" style="margin-bottom: 1.5rem;">The industry calls them "black
+                            boxes." We call that a problem. Every autonomous action an AI takes should be inspectable,
+                            replayable, and testable — without compromise on performance.</p>
+                        <p style="color: var(--text-muted); line-height: 1.8;">Oculo was built from the ground up with a
+                            single principle: <strong style="color: var(--text-main);">observability should be local,
+                                fast, and zero-cost to adopt.</strong> No cloud dependencies, no token overhead, no
+                            vendor lock-in.</p>
+                    </div>
+                    <div class="reveal stagger-1">
+                        <div class="terminal-premium">
+                            <div class="terminal-dots"><span></span><span></span><span></span></div>
+                            <pre style="margin: 0; color: #e2e8f0; font-size: 0.82rem; line-height: 1.8;"><span style="color:#818cf8">$</span> oculo status
+
+<span style="color:#10b981">●</span> Daemon running on :7600
+<span style="color:#f59e0b">↳</span> Traces: 1,247
+<span style="color:#f59e0b">↳</span> Spans:  8,932
+<span style="color:#f59e0b">↳</span> Memory: 12 MB
+<span style="color:#64748b">Last flush: 0.4ms ago</span></pre>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Values -->
+        <section class="section"
+            style="background: var(--bg-soft); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft);">
+            <div class="container">
+                <div class="reveal text-center" style="margin-bottom: 3rem;">
+                    <span class="section-label">Principles</span>
+                    <h2 class="section-title">Built on Conviction.</h2>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                    <div class="card reveal" style="text-align: center; padding: 2.5rem;">
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">🔒</div>
+                        <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem;">Local First</h3>
+                        <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.7;">Your agent data stays
+                            on your machine. Always. No telemetry, no cloud sync, no external dependencies.</p>
+                    </div>
+                    <div class="card reveal stagger-1" style="text-align: center; padding: 2.5rem;">
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">⚡</div>
+                        <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem;">Zero Overhead</h3>
+                        <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.7;">Sub-millisecond
+                            tracing with async batching. Oculo never slows down your agent's critical path.</p>
+                    </div>
+                    <div class="card reveal stagger-2" style="text-align: center; padding: 2.5rem;">
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">🧠</div>
+                        <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem;">AI-Native</h3>
+                        <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.7;">Purpose-built for
+                            agentic workflows — not retrofitted from APM tools. Memory diffs, token analysis, and prompt
+                            lineage are first-class citizens.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture preview -->
+        <section class="section">
+            <div class="container">
+                <div class="reveal text-center" style="margin-bottom: 3rem;">
+                    <span class="section-label">Architecture</span>
+                    <h2 class="section-title">Three-Layer Design.</h2>
+                    <p class="section-subtitle" style="margin: 0 auto;">SDK → Daemon → Visualizer. Simple, composable,
+                        fast.</p>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                    <div class="card reveal">
+                        <div
+                            style="font-size: 2.5rem; font-weight: 800; color: rgba(99,102,241,0.12); font-family: 'Space Grotesk', sans-serif; margin-bottom: 0.75rem;">
+                            SDK</div>
+                        <h4 style="margin-bottom: 0.5rem;">Python / Go</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7;">Lightweight
+                            instrumentation libraries that wrap your agent code in traces and spans. Non-blocking,
+                            context-managed.</p>
+                    </div>
+                    <div class="card reveal stagger-1">
+                        <div
+                            style="font-size: 2.5rem; font-weight: 800; color: rgba(99,102,241,0.12); font-family: 'Space Grotesk', sans-serif; margin-bottom: 0.75rem;">
+                            Engine</div>
+                        <h4 style="margin-bottom: 0.5rem;">Go Daemon</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7;">High-throughput
+                            ingestion over UDS/TCP. Batches data into a local SQLite store with WAL journaling and FTS5
+                            indexing.</p>
+                    </div>
+                    <div class="card reveal stagger-2">
+                        <div
+                            style="font-size: 2.5rem; font-weight: 800; color: rgba(99,102,241,0.12); font-family: 'Space Grotesk', sans-serif; margin-bottom: 0.75rem;">
+                            View</div>
+                        <h4 style="margin-bottom: 0.5rem;">TUI / Web</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7;">Terminal or
+                            browser-based dashboards for exploring traces, diffing memory, and analyzing token patterns
+                            in real-time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section">
+            <div class="container text-center reveal">
+                <h2 class="section-title" style="margin-bottom: 1rem;">Want to help build the future?</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 1.05rem;">Oculo is open source and
+                    actively looking for contributors.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium btn-lg">Contribute on GitHub</a>
+                    <a href="contributors.html" class="btn-premium btn-secondary btn-lg">Meet the Team</a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <div data-component="footer"></div>
-
     <script src="assets/js/main.js"></script>
     <style>
-        .nav-link-premium { text-decoration: none; color: var(--text-muted); font-weight: 500; transition: color 0.3s; }
-        .nav-link-premium:hover { color: var(--text-main); }
-        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @media (max-width: 768px) {
+
+            div[style*="grid-template-columns: 1fr 1fr; gap: 4rem"],
+            div[style*="grid-template-columns: repeat(3, 1fr)"] {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </body>
+
 </html>

@@ -1,76 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog | Oculo</title>
+    <meta name="description" content="Updates, insights, and deep dives from the Oculo team.">
     <link rel="stylesheet" href="assets/css/styles.css">
     <style>
-        .blog-post-card { background: white; border: 1px solid var(--border-soft); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.4s ease; box-shadow: var(--shadow-card); display: flex; flex-direction: column; }
-        .blog-post-card:hover { transform: translateY(-8px); border-color: var(--brand-primary); box-shadow: var(--shadow-floating); }
-        .blog-thumb { height: 240px; background: var(--bg-soft); display: flex; align-items: center; justify-content: center; position: relative; }
-        .blog-thumb::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.02)); }
-        .blog-body { padding: 2.5rem; }
-        .blog-date { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--text-faint); letter-spacing: 0.1em; margin-bottom: 1rem; display: block; }
+        .blog-card {
+            background: white;
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all 0.35s ease;
+            box-shadow: var(--shadow-sm);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-floating);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .blog-card-img {
+            height: 200px;
+            background: linear-gradient(135deg, #ecfdf5 0%, #f0f9ff 50%, #faf5ff 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .blog-card-body {
+            padding: 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card-body .tag {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            background: rgba(99, 102, 241, 0.08);
+            color: var(--brand-primary);
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+
+        .blog-card-body h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.35;
+        }
+
+        .blog-card-body p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        .blog-card-body .meta {
+            margin-top: 1.25rem;
+            font-size: 0.78rem;
+            color: var(--text-faint);
+        }
     </style>
 </head>
+
 <body>
-    <div class="mesh-bg"></div>
     <nav class="nav-premium">
-        <a href="../index.html" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem; text-decoration: none; margin-left: 1rem;">
-            <div style="width: 28px; height: 28px; background: var(--text-main); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle></svg>
+        <a href="../index.html" class="nav-logo-container">
+            <div class="nav-logo-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <circle cx="12" cy="12" r="10"></circle>
+                </svg>
             </div>
             Oculo
         </a>
-        <div style="flex: 1; display: flex; justify-content: center; gap: 2rem;">
+        <div class="nav-links-container">
             <a href="docs.html" class="nav-link-premium">Docs</a>
             <a href="installation.html" class="nav-link-premium">Install</a>
             <a href="about.html" class="nav-link-premium">About</a>
         </div>
-        <div style="margin-right: 1rem;">
-            <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Star on GitHub</a>
+        <div class="nav-cta-wrap">
+            <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium"
+                style="padding: 0.5rem 1.1rem; font-size: 0.8rem;">Star on GitHub</a>
         </div>
     </nav>
 
-    <header class="section" style="padding-top: 15rem;">
-        <div class="container text-center">
-            <h1 class="hero-title" style="font-size: 4rem;">Insights.</h1>
-            <p style="font-size: 1.25rem; color: var(--text-muted); margin-top: 2rem;">Engineering thoughts on AI observability.</p>
+    <div class="page-hero">
+        <div class="container">
+            <h1 class="hero-title">From the Lab.</h1>
+            <p>Updates, deep dives, and engineering stories from the Oculo project.</p>
         </div>
-    </header>
+    </div>
 
-    <main class="container" style="padding-bottom: 10rem;">
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 3rem;">
-            <div class="blog-post-card reveal">
-                <div class="blog-thumb">
-                    <div style="width: 100px; height: 100px; background: var(--brand-primary-glow); border-radius: 20px; transform: rotate(15deg);"></div>
+    <main class="container" style="padding-bottom: 6rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem;">
+            <a href="#" class="blog-card reveal">
+                <div class="blog-card-img">🔬</div>
+                <div class="blog-card-body">
+                    <span class="tag">Architecture</span>
+                    <h3>Why We Chose SQLite Over Postgres for Agent Traces</h3>
+                    <p>Agent traces are ephemeral by nature. We needed a storage engine that's fast, portable, and
+                        zero-config. Here's why SQLite with WAL mode was the answer.</p>
+                    <div class="meta">Feb 2026 · 8 min read</div>
                 </div>
-                <div class="blog-body">
-                    <span class="blog-date">Feb 16, 2026</span>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Why Tracing Agents is Different from Microservices</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Traditional APM focuses on latency. Agent observability focuses on cognition loops. Learn why we built a specialized stack for AI.</p>
-                    <a href="#" style="color: var(--brand-primary); font-weight: 700; text-decoration: none; font-size: 0.9rem;">Read Post â†’</a>
+            </a>
+            <a href="#" class="blog-card reveal stagger-1">
+                <div class="blog-card-img">🧠</div>
+                <div class="blog-card-body">
+                    <span class="tag">Deep Dive</span>
+                    <h3>Detecting Cognition Drift with Memory Diffs</h3>
+                    <p>How Oculo's memory diffing engine works under the hood — from capturing state snapshots to
+                        computing unified diffs and detecting regressions.</p>
+                    <div class="meta">Feb 2026 · 12 min read</div>
                 </div>
-            </div>
-
-            <div class="blog-post-card reveal stagger-1">
-                <div class="blog-thumb">
-                    <div style="width: 120px; height: 10px; background: #10b981; border-radius: 10px; opacity: 0.3;"></div>
+            </a>
+            <a href="#" class="blog-card reveal stagger-2">
+                <div class="blog-card-img">📊</div>
+                <div class="blog-card-body">
+                    <span class="tag">Engineering</span>
+                    <h3>Building a Zero-Overhead Tracing SDK in Python</h3>
+                    <p>Sub-millisecond instrumentation without blocking your agent's critical path. Context managers,
+                        async batching, and the art of doing nothing slowly.</p>
+                    <div class="meta">Jan 2026 · 10 min read</div>
                 </div>
-                <div class="blog-body">
-                    <span class="blog-date">Feb 10, 2026</span>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Local-First Data with Go and SQLite</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 2rem;">How we achieved sub-millisecond overhead during ingestion by keeping the data strictly local and using optimized batch flushes.</p>
-                    <a href="#" style="color: var(--brand-primary); font-weight: 700; text-decoration: none; font-size: 0.9rem;">Read Post â†’</a>
+            </a>
+            <a href="#" class="blog-card reveal stagger-3">
+                <div class="blog-card-img">🚀</div>
+                <div class="blog-card-body">
+                    <span class="tag">Release</span>
+                    <h3>Oculo v0.1.0 Alpha: First Public Release</h3>
+                    <p>We're excited to announce the first alpha release of Oculo — the Glass Box for AI Agents. Here's
+                        what's included and what's next on the roadmap.</p>
+                    <div class="meta">Jan 2026 · 5 min read</div>
                 </div>
-            </div>
+            </a>
+            <a href="#" class="blog-card reveal">
+                <div class="blog-card-img">🔍</div>
+                <div class="blog-card-body">
+                    <span class="tag">Tutorial</span>
+                    <h3>Full-Text Search Across 10,000 Agent Prompts</h3>
+                    <p>Leveraging SQLite's FTS5 extension for instant, full-text search across your entire trace history
+                        — no Elasticsearch required.</p>
+                    <div class="meta">Jan 2026 · 7 min read</div>
+                </div>
+            </a>
+            <a href="#" class="blog-card reveal stagger-1">
+                <div class="blog-card-img">💡</div>
+                <div class="blog-card-body">
+                    <span class="tag">Philosophy</span>
+                    <h3>Why AI Observability Needs to Be Local-First</h3>
+                    <p>Cloud observability platforms are great for web services. But for AI agents processing sensitive
+                        data, local-first isn't a feature — it's a requirement.</p>
+                    <div class="meta">Jan 2026 · 6 min read</div>
+                </div>
+            </a>
         </div>
     </main>
 
     <div data-component="footer"></div>
-
     <script src="assets/js/main.js"></script>
-    <style>.nav-link-premium { text-decoration: none; color: var(--text-muted); font-weight: 500; transition: color 0.3s; }.nav-link-premium:hover { color: var(--text-main); }</style>
 </body>
+
 </html>

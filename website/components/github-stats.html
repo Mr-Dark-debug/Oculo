@@ -1,26 +1,40 @@
-<div style="background: white; border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 5rem; display: flex; align-items: center; justify-content: space-between; gap: 4rem; flex-wrap: wrap;">
-    <div style="flex: 1; min-width: 300px;">
-        <div style="display: inline-block; padding: 0.4rem 1rem; background: rgba(99, 102, 241, 0.1); color: var(--brand-primary); border-radius: 100px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.5rem;">
-            Open Source
-        </div>
-        <h2 style="font-size: 3rem; margin-bottom: 1.5rem;">Evolving with the community.</h2>
-        <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 500px;">Oculo is built transparently on GitHub. We're growing fast and always looking for contributors to help build the next generation of AI observability.</p>
-    </div>
-    
-    <div style="display: flex; gap: 1.5rem;">
-        <div class="card" style="padding: 2.5rem; border-radius: var(--radius-md); text-align: center; min-width: 180px;">
-            <div id="gh-stars-val" style="font-size: 3rem; font-weight: 800; color: var(--text-main); font-family: 'Space Grotesk', sans-serif;">--</div>
-            <div style="color: var(--text-muted); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-top: 0.5rem;">Stars</div>
-        </div>
-        <div class="card" style="padding: 2.5rem; border-radius: var(--radius-md); text-align: center; min-width: 180px;">
-            <div id="gh-forks-val" style="font-size: 3rem; font-weight: 800; color: var(--text-main); font-family: 'Space Grotesk', sans-serif;">--</div>
-            <div style="color: var(--text-muted); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-top: 0.5rem;">Forks</div>
-        </div>
-    </div>
-    
-    <div style="width: 100%; margin-top: 2rem;">
-        <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium" style="width: 100%; justify-content: center;">
-            View the Repository
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+    <div class="reveal" style="flex: 1;">
+        <span class="section-label">Open Source</span>
+        <h2 class="section-title">Evolving with<br>the community.</h2>
+        <p
+            style="color: var(--text-muted); font-size: 1.05rem; max-width: 450px; line-height: 1.7; margin-bottom: 2rem;">
+            Oculo is built transparently on GitHub. We're growing fast and always looking for contributors to help build
+            the next generation of AI observability.</p>
+        <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium" style="width: fit-content;">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+            </svg>
+            View Repository
         </a>
     </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+        <div class="card reveal stagger-1" style="text-align: center;">
+            <div id="gh-stars-val" class="stat-value">—</div>
+            <div class="stat-label" style="margin-top: 0.35rem;">Stars</div>
+        </div>
+        <div class="card reveal stagger-2" style="text-align: center;">
+            <div id="gh-forks-val" class="stat-value">—</div>
+            <div class="stat-label" style="margin-top: 0.35rem;">Forks</div>
+        </div>
+        <div class="card reveal stagger-3" style="text-align: center; grid-column: 1 / -1;">
+            <div id="gh-issues-val" class="stat-value">—</div>
+            <div class="stat-label" style="margin-top: 0.35rem;">Open Issues</div>
+        </div>
+    </div>
 </div>
+
+<style>
+    @media (max-width: 768px) {
+        div[style*="grid-template-columns: 1fr 1fr; gap: 3rem"] {
+            grid-template-columns: 1fr !important;
+        }
+    }
+</style>

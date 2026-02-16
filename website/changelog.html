@@ -1,95 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Changelog | Oculo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Every release, improvement, and fix for Oculo — documented here.">
     <link rel="stylesheet" href="assets/css/styles.css">
     <style>
-        .changelog-container { max-width: 800px; margin: 4rem auto; }
-        .version-block { margin-bottom: 6rem; }
-        .version-header { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
-        .version-number { font-size: 2rem; font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--text-primary); }
-        .version-date { color: var(--text-muted); font-size: 1rem; }
-        .change-category { margin-bottom: 2rem; }
-        .category-title { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 1rem; }
-        .change-list { list-style: none; }
-        .change-item { margin-bottom: 0.75rem; display: flex; gap: 1rem; align-items: flex-start; }
-        .change-badge { padding: 0.125rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; flex-shrink: 0; margin-top: 0.25rem; }
-        .badge-added { background: rgba(16, 185, 129, 0.1); color: var(--accent-success); }
-        .badge-fixed { background: rgba(239, 68, 68, 0.1); color: var(--accent-error); }
-        .badge-improved { background: rgba(79, 70, 229, 0.1); color: var(--accent-primary); }
+        .changelog-entry {
+            margin-bottom: 4rem;
+        }
+
+        .changelog-version {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .changelog-version h2 {
+            font-size: 1.75rem;
+        }
+
+        .changelog-version .vtag {
+            padding: 0.2rem 0.7rem;
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .vtag-latest {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+        }
+
+        .vtag-upcoming {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--brand-primary);
+        }
+
+        .changelog-date {
+            font-size: 0.82rem;
+            color: var(--text-faint);
+            margin-bottom: 1.25rem;
+        }
+
+        .change-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .change-group h4 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-faint);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .change-list {
+            list-style: none;
+        }
+
+        .change-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .change-list li:last-child {
+            border-bottom: none;
+        }
+
+        .change-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.85rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+
+        .change-list.added li::before {
+            background: #10b981;
+        }
+
+        .change-list.improved li::before {
+            background: var(--brand-secondary);
+        }
+
+        .change-list.fixed li::before {
+            background: #f59e0b;
+        }
     </style>
 </head>
+
 <body>
-    <div data-component="navbar"></div>
-
-    <header class="section" style="padding-top: 10rem; background: var(--bg-secondary);">
-        <div class="container text-center">
-            <h1 style="font-size: 3.5rem;">Changelog</h1>
-            <p style="font-size: 1.25rem; margin-top: 1rem;">The evolution of AI tracing, version by version.</p>
-        </div>
-    </header>
-
-    <main class="section">
-        <div class="container changelog-container">
-            <div class="version-block reveal">
-                <div class="version-header">
-                    <span class="version-number">v0.1.0</span>
-                    <span class="version-date">February 16, 2026</span>
-                </div>
-                <div class="change-category">
-                    <div class="category-title">Added</div>
-                    <ul class="change-list">
-                        <li class="change-item">
-                            <span class="change-badge badge-added">Added</span>
-                            <span>Initial release of Oculo core daemon in Go.</span>
-                        </li>
-                        <li class="change-item">
-                            <span class="change-badge badge-added">Added</span>
-                            <span>Python SDK with automated context managers for traces and spans.</span>
-                        </li>
-                        <li class="change-item">
-                            <span class="change-badge badge-added">Added</span>
-                            <span>Protobuf-based ingestion protocol over TCP and UDS.</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="change-category">
-                    <div class="category-title">Improved</div>
-                    <ul class="change-list">
-                        <li class="change-item">
-                            <span class="change-badge badge-improved">Improved</span>
-                            <span>Sub-millisecond latency for span ingestion on local UDS.</span>
-                        </li>
-                    </ul>
-                </div>
+    <nav class="nav-premium">
+        <a href="../index.html" class="nav-logo-container">
+            <div class="nav-logo-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <circle cx="12" cy="12" r="10"></circle>
+                </svg>
             </div>
+            Oculo
+        </a>
+        <div class="nav-links-container">
+            <a href="docs.html" class="nav-link-premium">Docs</a>
+            <a href="installation.html" class="nav-link-premium">Install</a>
+            <a href="blog.html" class="nav-link-premium">Blog</a>
+        </div>
+        <div class="nav-cta-wrap">
+            <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium"
+                style="padding: 0.5rem 1.1rem; font-size: 0.8rem;">Star on GitHub</a>
+        </div>
+    </nav>
 
-            <div class="version-block reveal" style="opacity: 0.6;">
-                <div class="version-header">
-                    <span class="version-number">v0.2.0-alpha</span>
-                    <span class="version-date">Coming soon</span>
-                </div>
-                <div class="change-category">
-                    <div class="category-title">Planned</div>
-                    <ul class="change-list">
-                        <li class="change-item">
-                            <span class="change-badge badge-added">Upcoming</span>
-                            <span>Full TUI visualization engine for real-time trace inspection.</span>
-                        </li>
-                    </ul>
-                </div>
+    <div class="page-hero">
+        <div class="container">
+            <h1 class="hero-title">What's New.</h1>
+            <p>Every release, improvement, and fix — documented transparently.</p>
+        </div>
+    </div>
+
+    <main class="container" style="max-width: 800px; padding-bottom: 6rem;">
+        <div class="changelog-entry reveal">
+            <div class="changelog-version">
+                <h2>v0.2.0</h2>
+                <span class="vtag vtag-upcoming">In Development</span>
+            </div>
+            <div class="changelog-date">Expected Q2 2026</div>
+            <div class="change-group">
+                <h4>Planned</h4>
+                <ul class="change-list added">
+                    <li>Terminal User Interface (TUI) for real-time trace inspection</li>
+                    <li>Interactive memory diff viewer with side-by-side comparison</li>
+                    <li>Timeline navigation for stepping through span history</li>
+                    <li>Token usage visualization with bar charts</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="changelog-entry reveal">
+            <div class="changelog-version">
+                <h2>v0.1.0</h2>
+                <span class="vtag vtag-latest">Latest</span>
+            </div>
+            <div class="changelog-date">January 2026</div>
+            <div class="change-group">
+                <h4>Added</h4>
+                <ul class="change-list added">
+                    <li>Core Go daemon with UDS and TCP socket ingestion</li>
+                    <li>SQLite persistence layer with WAL mode and FTS5 indexing</li>
+                    <li>Python SDK with context-managed traces and spans</li>
+                    <li>Memory mutation diffing with unified diff output</li>
+                    <li>Token counting and per-model cost attribution</li>
+                    <li>CLI for daemon lifecycle management (start, stop, status)</li>
+                    <li>Crash recovery with pending write journals</li>
+                </ul>
+            </div>
+            <div class="change-group">
+                <h4>Improved</h4>
+                <ul class="change-list improved">
+                    <li>Async batch ingestion for zero-overhead tracing</li>
+                    <li>Wire protocol optimized for high-throughput span submission</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="changelog-entry reveal">
+            <div class="changelog-version">
+                <h2>v0.0.1</h2>
+            </div>
+            <div class="changelog-date">December 2025</div>
+            <div class="change-group">
+                <h4>Added</h4>
+                <ul class="change-list added">
+                    <li>Initial prototype with basic trace capture</li>
+                    <li>SQLite storage backend</li>
+                    <li>Python SDK prototype</li>
+                </ul>
             </div>
         </div>
     </main>
 
     <div data-component="footer"></div>
-
     <script src="assets/js/main.js"></script>
-    <script src="components/animations.js"></script>
 </body>
+
 </html>

@@ -1,42 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initNavbarScroll();
-    initMagneticButtons();
     initScrollReveal();
     loadComponents();
+    initHeroTyping();
+    fetchGitHubStats();
+    fetchContributors();
+    initFullContributors();
 });
 
+/* ─── Navbar ──────────────────────────── */
 function initNavbarScroll() {
     const nav = document.querySelector('.nav-premium');
     if (!nav) return;
-    
+
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            nav.classList.add('scrolled');
-        } else {
-            nav.classList.remove('scrolled');
-        }
-    });
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
 }
 
-function initMagneticButtons() {
-    const buttons = document.querySelectorAll('.btn-premium');
-    
-    buttons.forEach(btn => {
-        btn.addEventListener('mousemove', (e) => {
-            const rect = btn.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-            
-            btn.style.transform = `translate(${x * 0.2}px, ${y * 0.3}px)`;
-        });
-        
-        btn.addEventListener('mouseleave', () => {
-            btn.style.transform = 'translate(0, 0)';
-        });
-    });
-}
-
+/* ─── Scroll Reveal ───────────────────── */
 function initScrollReveal() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -44,55 +27,61 @@ function initScrollReveal() {
                 entry.target.classList.add('active');
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 }
 
+/* ─── Smooth Scroll ───────────────────── */
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
             const target = document.querySelector(targetId);
             if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - 100,
-                    behavior: 'smooth'
-                });
+                window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
             }
         });
     });
 }
 
+/* ─── Component Loader ────────────────── */
 async function loadComponents() {
     const isSubPage = window.location.pathname.includes('/website/');
     const basePath = isSubPage ? 'components/' : 'website/components/';
-    
+
     const components = document.querySelectorAll('[data-component]');
-    
+
     for (const el of components) {
         const name = el.getAttribute('data-component');
         try {
             const response = await fetch(`${basePath}${name}.html`);
             if (response.ok) {
                 let html = await response.text();
-                
-                // Adjustment for subpages
+
                 if (isSubPage) {
                     html = html.replace(/website\//g, '');
                     html = html.replace(/index\.html/g, '../index.html');
                     html = html.replace(/banner\.svg/g, '../banner.svg');
                 }
-                
+
                 el.innerHTML = html;
-                
+
+                // Re-observe newly loaded elements for scroll reveal
+                el.querySelectorAll('.reveal').forEach(r => {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) entry.target.classList.add('active');
+                        });
+                    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+                    observer.observe(r);
+                });
+
                 // Component-specific inits
                 if (name === 'hero') initHeroTyping();
                 if (name === 'github-stats') fetchGitHubStats();
-                if (name === 'contributors') fetchContributors();
             }
         } catch (e) {
             console.error(`Error loading component: ${name}`, e);
@@ -100,42 +89,51 @@ async function loadComponents() {
     }
 }
 
+/* ─── Hero Typing Effect ──────────────── */
 function initHeroTyping() {
     const terminal = document.getElementById('hero-code');
     if (!terminal) return;
-    
+
     const code = [
-        '<span style="color:#818cf8">oculo</span> trace --agent researcher',
-        '<span style="color:#94a3b8"># Ingesting memory mutation...</span>',
-        '<span style="color:#10b981">Diff captured:</span> <span style="color:#f59e0b">"context_window"</span> changed.',
-        '<span style="color:#818cf8">oculo</span> analyze report --format=tui'
+        '<span style="color:#818cf8">$</span> oculo trace --agent researcher-v1',
+        '<span style="color:#64748b"># Ingesting memory mutations...</span>',
+        '<span style="color:#10b981">✓</span> Diff captured: <span style="color:#f59e0b">"context_window"</span> updated',
+        '<span style="color:#10b981">✓</span> Token usage: <span style="color:#a5f3fc">1,247</span> prompt / <span style="color:#a5f3fc">892</span> completion',
+        '<span style="color:#818cf8">$</span> oculo tui',
+        '<span style="color:#10b981">●</span> TUI launched on trace <span style="color:#f59e0b">t_8f3a</span>'
     ];
-    
+
     let i = 0;
     terminal.innerHTML = '';
-    
+
     function type() {
         if (i < code.length) {
             const p = document.createElement('div');
-            p.style.marginBottom = '8px';
-            p.innerHTML = `<span style="color:#475569; margin-right:12px">â€º</span> ${code[i]}`;
+            p.style.marginBottom = '6px';
+            p.innerHTML = code[i];
             p.style.opacity = '0';
-            p.style.transform = 'translateX(-10px)';
-            p.style.transition = 'all 0.5s ease';
+            p.style.transform = 'translateX(-8px)';
+            p.style.transition = 'all 0.4s ease';
             terminal.appendChild(p);
-            
+
             setTimeout(() => {
                 p.style.opacity = '1';
                 p.style.transform = 'translateX(0)';
                 i++;
-                setTimeout(type, 1000);
+                setTimeout(type, 800);
             }, 50);
+        } else {
+            // Blinking cursor
+            const cursor = document.createElement('div');
+            cursor.innerHTML = '<span style="color:#818cf8">$</span> <span style="animation: blink 1s step-end infinite; color:#94a3b8;">▋</span>';
+            terminal.appendChild(cursor);
         }
     }
-    
+
     type();
 }
 
+/* ─── GitHub Stats ────────────────────── */
 async function fetchGitHubStats() {
     const repo = 'Mr-Dark-debug/Oculo';
     try {
@@ -144,26 +142,70 @@ async function fetchGitHubStats() {
             const data = await res.json();
             const s = document.getElementById('gh-stars-val');
             const f = document.getElementById('gh-forks-val');
+            const iss = document.getElementById('gh-issues-val');
             if (s) s.innerText = data.stargazers_count;
             if (f) f.innerText = data.forks_count;
+            if (iss) iss.innerText = data.open_issues_count;
         }
-    } catch (e) {}
+    } catch (e) { }
 }
 
+/* ─── Homepage Contributors ───────────── */
 async function fetchContributors() {
+    const container = document.getElementById('contributors-scroll');
+    if (!container) return;
+
     const repo = 'Mr-Dark-debug/Oculo';
     try {
         const res = await fetch(`https://api.github.com/repos/${repo}/contributors`);
         if (res.ok) {
             const users = await res.json();
-            const container = document.getElementById('contributors-scroll');
-            if (container) {
-                container.innerHTML = users.map(u => `
-                    <a href="${u.html_url}" target="_blank" class="avatar-link" title="${u.login}">
-                        <img src="${u.avatar_url}" alt="${u.login}">
-                    </a>
-                `).join('');
-            }
+            container.innerHTML = users.slice(0, 12).map(u => `
+                <a href="${u.html_url}" target="_blank" class="avatar-link" title="${u.login}" style="text-decoration:none;">
+                    <img src="${u.avatar_url}" alt="${u.login}">
+                </a>
+            `).join('');
         }
-    } catch (e) {}
+    } catch (e) {
+        container.innerHTML = '<p style="color: var(--text-faint);">Could not load contributors.</p>';
+    }
 }
+
+/* ─── Full Contributors Page ──────────── */
+async function initFullContributors() {
+    const container = document.getElementById('full-contributors-list');
+    if (!container) return;
+
+    const repo = 'Mr-Dark-debug/Oculo';
+    try {
+        const res = await fetch(`https://api.github.com/repos/${repo}/contributors`);
+        if (res.ok) {
+            const users = await res.json();
+            container.innerHTML = users.map(u => `
+                <div class="contributor-card reveal">
+                    <img src="${u.avatar_url}" alt="${u.login}">
+                    <h4>${u.login}</h4>
+                    <p>${u.contributions} contributions</p>
+                    <a href="${u.html_url}" target="_blank">View Profile →</a>
+                </div>
+            `).join('');
+
+            // Observe newly added reveal elements
+            container.querySelectorAll('.reveal').forEach(el => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) entry.target.classList.add('active');
+                    });
+                }, { threshold: 0.08 });
+                observer.observe(el);
+            });
+        }
+    } catch (e) {
+        container.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 4rem; color: var(--text-muted);">Could not load contributors. Please check back later.</div>';
+    }
+}
+
+/* ─── CSS Keyframes (injected) ────────── */
+const style = document.createElement('style');
+style.textContent = '@keyframes blink { 50% { opacity: 0; } }';
+document.head.appendChild(style);

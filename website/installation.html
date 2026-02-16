@@ -1,88 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Installation | Oculo</title>
+    <meta name="description"
+        content="Get up and running with Oculo in under a minute. Install via pip, script, or Docker.">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .install-card {
+            background: white;
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            transition: all 0.35s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .install-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-floating);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .install-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .install-card p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .install-card pre {
+            background: #0f172a;
+            border-radius: var(--radius-sm);
+            padding: 1rem 1.25rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            color: #e2e8f0;
+            overflow-x: auto;
+            line-height: 1.8;
+        }
+
+        .install-step {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+
+        .install-step-num {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--brand-primary-glow);
+            color: var(--brand-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.82rem;
+            font-family: 'Space Grotesk', sans-serif;
+            flex-shrink: 0;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="mesh-bg"></div>
     <nav class="nav-premium">
-        <a href="../index.html" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem; text-decoration: none; margin-left: 1rem;">
-            <div style="width: 28px; height: 28px; background: var(--text-main); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle></svg>
+        <a href="../index.html" class="nav-logo-container">
+            <div class="nav-logo-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <circle cx="12" cy="12" r="10"></circle>
+                </svg>
             </div>
             Oculo
         </a>
-        <div style="flex: 1; display: flex; justify-content: center; gap: 2rem;">
+        <div class="nav-links-container">
             <a href="docs.html" class="nav-link-premium">Docs</a>
             <a href="blog.html" class="nav-link-premium">Blog</a>
             <a href="about.html" class="nav-link-premium">About</a>
         </div>
-        <div style="margin-right: 1rem;">
-            <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Star on GitHub</a>
+        <div class="nav-cta-wrap">
+            <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium"
+                style="padding: 0.5rem 1.1rem; font-size: 0.8rem;">Star on GitHub</a>
         </div>
     </nav>
 
-    <header class="section" style="padding-top: 15rem;">
-        <div class="container text-center">
-            <h1 class="hero-title" style="font-size: 4rem;">Up and Running.</h1>
-            <p style="font-size: 1.25rem; color: var(--text-muted); margin-top: 2rem;">Install the Oculo daemon and start tracing your agents in seconds.</p>
+    <div class="page-hero">
+        <div class="container">
+            <h1 class="hero-title">Up and Running.</h1>
+            <p>Choose your preferred method. You'll be tracing in under a minute.</p>
         </div>
-    </header>
+    </div>
 
-    <main class="container" style="padding-bottom: 10rem;">
-        <div class="bento-grid">
-            <!-- Automatic Install -->
-            <div class="bento-item reveal" style="grid-column: span 12;">
-                <div style="display: flex; gap: 4rem; align-items: center;">
-                    <div style="flex: 1;">
-                        <h2>Automated Script</h2>
-                        <p style="margin-top: 1rem; color: var(--text-muted);">The fastest way to install Oculo on macOS, Linux, or WSL. Our script automatically detects your architecture and installs the latest binary.</p>
-                    </div>
-                    <div style="flex: 1;">
-                        <div class="terminal-premium">
-                            <div style="display: flex; gap: 8px; margin-bottom: 1rem;">
-                                <span style="width: 10px; height: 10px; border-radius: 50%; background: #ff5f56;"></span>
-                                <span style="width: 10px; height: 10px; border-radius: 50%; background: #ffbd2e;"></span>
-                                <span style="width: 10px; height: 10px; border-radius: 50%; background: #27c93f;"></span>
-                            </div>
-                            <code style="color: #e2e8f0;">curl -sSf https://install.oculo.dev | bash</code>
-                        </div>
-                    </div>
+    <main class="container" style="padding-bottom: 6rem;">
+        <!-- Quick steps -->
+        <div style="max-width: 680px; margin: 0 auto 4rem;">
+            <div class="install-step reveal">
+                <div class="install-step-num">1</div>
+                <div>
+                    <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Install the SDK</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Add the instrumentation layer to your Python
+                        project.</p>
                 </div>
             </div>
-
-            <!-- Package Managers -->
-            <div class="bento-item reveal stagger-1" style="grid-column: span 6;">
-                <h3>Package Managers</h3>
-                <div style="margin-top: 2rem;">
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="font-size: 0.75rem; font-weight: 800; color: var(--text-faint); margin-bottom: 0.5rem; text-transform: uppercase;">macOS (Homebrew)</div>
-                        <code>brew install oculo-project/tap/oculo</code>
-                    </div>
-                    <div>
-                        <div style="font-size: 0.75rem; font-weight: 800; color: var(--text-faint); margin-bottom: 0.5rem; text-transform: uppercase;">Windows (WinGet)</div>
-                        <code>winget install oculo</code>
-                    </div>
+            <div class="install-step reveal stagger-1">
+                <div class="install-step-num">2</div>
+                <div>
+                    <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Start the Daemon</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Start the high-performance Go daemon that
+                        ingests trace data.</p>
                 </div>
             </div>
+            <div class="install-step reveal stagger-2">
+                <div class="install-step-num">3</div>
+                <div>
+                    <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Instrument & Trace</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Wrap your agent code in traces and spans —
+                        that's it.</p>
+                </div>
+            </div>
+        </div>
 
-            <!-- Docker -->
-            <div class="bento-item reveal stagger-2" style="grid-column: span 6;">
+        <!-- Install methods -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem;">
+            <div class="install-card reveal">
+                <div class="icon-box" style="background: var(--brand-primary-glow); color: var(--brand-primary);">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="4 17 10 11 4 5"></polyline>
+                        <line x1="12" y1="19" x2="20" y2="19"></line>
+                    </svg>
+                </div>
+                <h3>Script Install</h3>
+                <p>One-liner install for Linux & macOS. Downloads the latest binary and places it in your PATH.</p>
+                <pre>curl -fsSL https://raw.githubusercontent.com/Mr-Dark-debug/Oculo/main/install.sh | bash</pre>
+            </div>
+            <div class="install-card reveal stagger-1">
+                <div class="icon-box" style="background: rgba(14,165,233,0.1); color: var(--brand-secondary);">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                        </path>
+                    </svg>
+                </div>
+                <h3>Python SDK (pip)</h3>
+                <p>Install the Python instrumentation library directly from PyPI.</p>
+                <pre>pip install oculo</pre>
+            </div>
+            <div class="install-card reveal stagger-2">
+                <div class="icon-box" style="background: rgba(16,185,129,0.1); color: #10b981;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="6" width="20" height="8" rx="1"></rect>
+                        <path d="M6 18h12"></path>
+                        <path d="M6 14v4"></path>
+                        <path d="M18 14v4"></path>
+                    </svg>
+                </div>
                 <h3>Docker</h3>
-                <p style="margin-top: 1rem; color: var(--text-muted);">Run the Oculo daemon in a isolated container environment.</p>
-                <div class="terminal-premium" style="margin-top: 1.5rem; padding: 1.5rem;">
-                    <code style="color: #e2e8f0; font-size: 0.8rem;">docker pull oculodev/oculo:latest</code>
-                </div>
+                <p>Run the daemon in an isolated container. Ideal for CI/CD or team environments.</p>
+                <pre>docker run -d -p 7600:7600 \
+  oculo/daemon:latest</pre>
             </div>
+            <div class="install-card reveal stagger-3">
+                <div class="icon-box" style="background: rgba(245,158,11,0.1); color: #f59e0b;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                </div>
+                <h3>Build from Source</h3>
+                <p>Clone and build the daemon yourself using Go 1.22+.</p>
+                <pre>git clone https://github.com/Mr-Dark-debug/Oculo.git
+cd Oculo && go build -o oculo ./cmd/oculo</pre>
+            </div>
+        </div>
+
+        <!-- Next steps -->
+        <div style="text-align: center; margin-top: 4rem;" class="reveal">
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Ready to instrument your
+                first agent?</p>
+            <a href="docs.html" class="btn-premium btn-lg">Read the Docs →</a>
         </div>
     </main>
 
     <div data-component="footer"></div>
-
     <script src="assets/js/main.js"></script>
-    <style>.nav-link-premium { text-decoration: none; color: var(--text-muted); font-weight: 500; transition: color 0.3s; }.nav-link-premium:hover { color: var(--text-main); }</style>
 </body>
+
 </html>

@@ -1,4 +1,6 @@
-![Oculo Banner](banner.svg)
+<p align="center">
+  <img src="./banner.svg" alt="Oculo Banner" width="600">
+</p>
 
 <p align="center">
   <strong>Runtime debugging for AI agents.</strong><br>
