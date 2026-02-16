@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=64", "setuptools-scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oculo-sdk"
+version = "0.1.0"
+description = "Python SDK for Oculo — The Glass Box for AI Agents"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+authors = [
+    {name = "Mr-Dark-debug"},
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Debuggers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+keywords = ["ai", "agents", "debugging", "tracing", "observability"]
+
+[project.urls]
+Homepage = "https://github.com/Mr-Dark-debug/oculo"
+Repository = "https://github.com/Mr-Dark-debug/oculo"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["oculo*"]

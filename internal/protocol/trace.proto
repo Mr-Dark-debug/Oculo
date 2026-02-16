@@ -1,0 +1,121 @@
+syntax = "proto3";
+
+package oculo;
+
+option go_package = "github.com/Mr-Dark-debug/oculo/internal/protocol";
+
+// AgentTrace represents a complete execution trace of an AI agent.
+// A trace contains multiple spans representing individual operations
+// like LLM calls, tool invocations, or memory mutations.
+message AgentTrace {
+  string trace_id = 1;
+  string agent_name = 2;
+  int64 start_time = 3;   // Unix nanoseconds
+  int64 end_time = 4;     // Unix nanoseconds
+  string status = 5;      // "running", "completed", "failed"
+  map<string, string> metadata = 6;
+  repeated Span spans = 7;
+}
+
+// Span represents a single unit of work within a trace.
+// Spans form a tree structure via parent_span_id to represent
+// the causal chain of agent operations.
+message Span {
+  string span_id = 1;
+  string trace_id = 2;
+  string parent_span_id = 3;
+  
+  // Operation classification for AI-aware debugging
+  OperationType operation_type = 4;
+  string operation_name = 5;
+  
+  int64 start_time = 6;   // Unix nanoseconds
+  int64 duration_ms = 7;
+  
+  // AI-specific fields
+  string prompt = 8;
+  string completion = 9;
+  int32 prompt_tokens = 10;
+  int32 completion_tokens = 11;
+  string model = 12;
+  float temperature = 13;
+  
+  // Memory mutations captured during this span
+  repeated MemoryEvent memory_events = 14;
+  
+  // Tool call details
+  repeated ToolCall tool_calls = 15;
+  
+  // Generic metadata as JSON
+  string metadata_json = 16;
+  
+  string status = 17;  // "ok", "error"
+  string error_message = 18;
+}
+
+// OperationType classifies the kind of work a span represents.
+// This is the key discriminator for AI-native debugging.
+enum OperationType {
+  OPERATION_UNSPECIFIED = 0;
+  LLM = 1;      // Language model invocation
+  TOOL = 2;     // External tool call (search, API, etc.)
+  MEMORY = 3;   // Memory read/write/delete
+  PLANNING = 4; // Agent planning/reasoning step
+  RETRIEVAL = 5; // RAG retrieval operation
+}
+
+// MemoryEvent captures a single mutation to the agent's memory store.
+// This is the core data structure for the "Glass Box" memory diff view.
+message MemoryEvent {
+  string event_id = 1;
+  string span_id = 2;
+  int64 timestamp = 3;          // Unix nanoseconds
+  MemoryOperation operation = 4;
+  string key = 5;
+  string old_value = 6;         // Previous value (empty for ADD)
+  string new_value = 7;         // New value (empty for DELETE)
+  string namespace = 8;         // Memory namespace/scope
+}
+
+// MemoryOperation enumerates the types of memory mutations.
+enum MemoryOperation {
+  MEMORY_OP_UNSPECIFIED = 0;
+  ADD = 1;
+  UPDATE = 2;
+  DELETE = 3;
+}
+
+// ToolCall captures the details of an external tool invocation.
+message ToolCall {
+  string tool_name = 1;
+  string arguments_json = 2;
+  string result_json = 3;
+  bool success = 4;
+  int64 latency_ms = 5;
+}
+
+// IngestRequest is the wire format for sending trace data
+// from the Python SDK to the Go daemon over UDS.
+message IngestRequest {
+  oneof payload {
+    AgentTrace trace = 1;
+    Span span = 2;
+    MemoryEvent memory_event = 3;
+    BatchPayload batch = 4;
+  }
+}
+
+// BatchPayload allows sending multiple items in a single request
+// for improved throughput.
+message BatchPayload {
+  repeated AgentTrace traces = 1;
+  repeated Span spans = 2;
+  repeated MemoryEvent memory_events = 3;
+}
+
+// IngestResponse acknowledges receipt of ingested data.
+message IngestResponse {
+  bool success = 1;
+  string error_message = 2;
+  int64 items_accepted = 3;
+}
