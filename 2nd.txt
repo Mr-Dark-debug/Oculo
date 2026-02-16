@@ -1,0 +1,364 @@
+Good. We are not shipping a hacker-looking debug toy.
+We are shipping a professional developer instrument.
+
+Below is the UI/UX DESIGN MASTER PROMPT you will give to the build agent.
+It forces real design quality using BubbleTea + Huh properly.
+No ASCII spam. No ugly borders. No “terminal art” garbage.
+
+Use it as-is.
+
+
+---
+
+🎨 MASTER UI/UX DESIGN PROMPT
+
+Project: Oculo – The Glass Box for AI Agents
+
+You are a senior UX engineer specializing in terminal-native interfaces using:
+
+https://github.com/charmbracelet/bubbletea
+
+https://github.com/charmbracelet/huh
+
+https://github.com/charmbracelet/lipgloss
+
+
+You must redesign and implement the complete TUI experience for:
+
+Oculo – The Glass Box for AI Agents
+
+This is not a hacker toy. This is a professional AI debugging instrument.
+
+No ASCII art blocks. No heavy borders. No terminal noise. No flashy junk. No meme styling.
+
+The interface must be:
+
+Minimal
+
+Clean
+
+Fast
+
+Responsive
+
+Color-balanced
+
+Keyboard-first
+
+Professional
+
+Readable in GitHub Dark theme terminals
+
+Suitable for long debugging sessions
+
+
+
+---
+
+🎯 DESIGN PRINCIPLES
+
+1. Minimalist cybersecurity aesthetic
+
+
+2. Subtle color hierarchy
+
+
+3. Clear visual separation without heavy borders
+
+
+4. Professional typography feel
+
+
+5. Zero clutter
+
+
+6. High signal-to-noise ratio
+
+
+7. Works on 80-column terminals
+
+
+8. Degrades gracefully on small screens
+
+
+
+
+---
+
+🎨 COLOR SYSTEM (STRICT)
+
+Base Background:
+#0d1117 (GitHub Dark)
+
+Primary Text:
+#ffffff
+
+Secondary Text:
+#8b949e
+
+Accent Blue:
+#58a6ff
+
+Accent Green:
+#3fb950
+
+Accent Red:
+#f85149
+
+Accent Yellow:
+#d29922
+
+Muted Divider:
+#30363d
+
+No rainbow usage.
+No random colors.
+
+All colors must be defined in a centralized theme file.
+
+
+---
+
+🖥 LAYOUT STRUCTURE
+
+Single-pane professional debugger layout:
+
+┌──────────────────────────────────────────────────────────────┐
+│ OCULO | Glass Box | Trace: a1b2c3 | Agent: research-bot     │
+│──────────────────────────────────────────────────────────────│
+│ Timeline Tree                  │ Detail Panel               │
+│                                 │                           │
+│  LLM Call (1.2s)               │ Type: LLM Call            │
+│   └ Tool: search (0.4s)        │ Model: gpt-4              │
+│  LLM Call (2.1s)               │ Tokens: 1200 / 400        │
+│   └ Memory Mutation            │ Latency: 1.2s             │
+│                                 │                           │
+│                                 │ Prompt Diff               │
+│                                 │ Memory Mutation Diff      │
+│──────────────────────────────────────────────────────────────│
+│ Status: 47 spans | 12k tokens | 3 anomalies detected        │
+└──────────────────────────────────────────────────────────────┘
+
+BUT:
+
+Do NOT use box-drawing spam.
+
+Use subtle separators via Lipgloss. Whitespace > borders.
+
+
+---
+
+🧠 REQUIRED UX FEATURES
+
+1. Smooth Navigation
+
+Arrow keys for span tree
+
+Tab to switch panes
+
+Enter to expand
+
+/ for search
+
+f to filter
+
+d to toggle diff
+
+q to quit
+
+
+Must show keyboard hints in footer.
+
+
+---
+
+2. Responsive Layout
+
+Auto-adjust panels when terminal resized
+
+Collapse detail panel on small width
+
+Lazy rendering for large trace trees
+
+Efficient virtualization for >1000 spans
+
+
+
+---
+
+3. Memory Mutation Diff View (Killer Feature)
+
+Use unified diff styling:
+
+Red for deletions
+
+Green for additions
+
+Muted grey for unchanged context
+
+
+Must support scrolling inside diff window independently.
+
+
+---
+
+4. Token Usage Visualization
+
+Minimal horizontal bars:
+
+LLM: ██████████████ 68%
+Tools: ██████ 22%
+Memory: ███ 10%
+
+No giant graphs. Just clean bars.
+
+
+---
+
+5. Search Experience (Using Huh)
+
+Use Charmbracelet Huh for:
+
+Search prompt modal
+
+Filter by agent
+
+Filter by span type
+
+Export dialog
+
+
+Modal must feel native and clean.
+
+
+---
+
+🧱 IMPLEMENTATION REQUIREMENTS
+
+Use BubbleTea model-view-update pattern properly.
+
+Split components:
+
+header
+
+timeline
+
+detail
+
+footer
+
+modals
+
+
+No giant 2000-line file.
+
+Component-based architecture.
+
+Proper state isolation.
+
+No global state.
+
+
+
+---
+
+🚫 DO NOT
+
+Do not generate ASCII banners.
+
+Do not use blinking text.
+
+Do not use emoji.
+
+Do not use over-styled box borders.
+
+Do not use rainbow gradients.
+
+Do not use gimmicks.
+
+
+This is a serious engineering tool.
+
+
+---
+
+🏷 PROJECT BANNER (SVG)
+
+Generate an SVG code snippet for a GitHub README banner.
+
+Text:
+"OCULO" in a bold, retro-futuristic sans-serif font (white text).
+
+Subtext:
+"The Glass Box for AI Agents" (grey text).
+
+Background:
+Deep black #0d1117
+
+Style:
+
+Minimalist cybersecurity aesthetic
+
+Thin subtle border (#30363d)
+
+Slight glow effect behind main text (very subtle)
+
+Clean centered alignment
+
+
+Dimensions: 800x200 px
+
+Must return raw SVG code only.
+
+No commentary.
+
+
+---
+
+README INTEGRATION INSTRUCTIONS
+
+Also include instructions in README:
+
+1. Copy the SVG code into banner.svg
+2. Save in project root
+3. Add to README:
+
+![Oculo Banner](banner.svg)
+
+
+---
+
+FINAL QUALITY CHECK
+
+Before delivering:
+
+Ensure UI renders correctly in:
+
+iTerm2
+
+Windows Terminal
+
+Linux terminal
+
+
+Test resizing
+
+Test large trace performance
+
+Test keyboard navigation
+
+Ensure no flicker
+
+Ensure color contrast accessibility
+
+
+Deliver only when polished.
+
+
+---
+
+This is not terminal art.
+
+This is developer instrumentation.
+
+Design it accordingly.
