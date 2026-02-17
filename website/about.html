@@ -23,7 +23,7 @@
         <!-- Mission -->
         <section class="section">
             <div class="container">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+                <div class="grid-2 align-center">
                     <div class="reveal">
                         <span class="section-label">Our Mission</span>
                         <h2 class="section-title">Transparency in<br>autonomous systems.</h2>
@@ -52,27 +52,26 @@
         </section>
 
         <!-- Values -->
-        <section class="section"
-            style="background: var(--bg-soft); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft);">
+        <section class="section section-soft-bg">
             <div class="container">
                 <div class="reveal text-center" style="margin-bottom: 3rem;">
                     <span class="section-label">Principles</span>
                     <h2 class="section-title">Built on Conviction.</h2>
                 </div>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-                    <div class="card reveal" style="text-align: center; padding: 2.5rem;">
+                <div class="grid-3">
+                    <div class="card reveal text-center" style="padding: 2.5rem;">
                         <div style="font-size: 2rem; margin-bottom: 1rem;">🔒</div>
                         <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem;">Local First</h3>
                         <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.7;">Your agent data stays
                             on your machine. Always. No telemetry, no cloud sync, no external dependencies.</p>
                     </div>
-                    <div class="card reveal stagger-1" style="text-align: center; padding: 2.5rem;">
+                    <div class="card reveal stagger-1 text-center" style="padding: 2.5rem;">
                         <div style="font-size: 2rem; margin-bottom: 1rem;">⚡</div>
                         <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem;">Zero Overhead</h3>
                         <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.7;">Sub-millisecond
                             tracing with async batching. Oculo never slows down your agent's critical path.</p>
                     </div>
-                    <div class="card reveal stagger-2" style="text-align: center; padding: 2.5rem;">
+                    <div class="card reveal stagger-2 text-center" style="padding: 2.5rem;">
                         <div style="font-size: 2rem; margin-bottom: 1rem;">🧠</div>
                         <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem;">AI-Native</h3>
                         <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.7;">Purpose-built for
@@ -92,29 +91,23 @@
                     <p class="section-subtitle" style="margin: 0 auto;">SDK → Daemon → Visualizer. Simple, composable,
                         fast.</p>
                 </div>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                <div class="grid-3">
                     <div class="card reveal">
-                        <div
-                            style="font-size: 2.5rem; font-weight: 800; color: rgba(99,102,241,0.12); font-family: 'Space Grotesk', sans-serif; margin-bottom: 0.75rem;">
-                            SDK</div>
+                        <div class="step-number" style="color: rgba(99,102,241,0.12); font-size: 2.5rem;">SDK</div>
                         <h4 style="margin-bottom: 0.5rem;">Python / Go</h4>
                         <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7;">Lightweight
                             instrumentation libraries that wrap your agent code in traces and spans. Non-blocking,
                             context-managed.</p>
                     </div>
                     <div class="card reveal stagger-1">
-                        <div
-                            style="font-size: 2.5rem; font-weight: 800; color: rgba(99,102,241,0.12); font-family: 'Space Grotesk', sans-serif; margin-bottom: 0.75rem;">
-                            Engine</div>
+                        <div class="step-number" style="color: rgba(99,102,241,0.12); font-size: 2.5rem;">Engine</div>
                         <h4 style="margin-bottom: 0.5rem;">Go Daemon</h4>
                         <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7;">High-throughput
                             ingestion over UDS/TCP. Batches data into a local SQLite store with WAL journaling and FTS5
                             indexing.</p>
                     </div>
                     <div class="card reveal stagger-2">
-                        <div
-                            style="font-size: 2.5rem; font-weight: 800; color: rgba(99,102,241,0.12); font-family: 'Space Grotesk', sans-serif; margin-bottom: 0.75rem;">
-                            View</div>
+                        <div class="step-number" style="color: rgba(99,102,241,0.12); font-size: 2.5rem;">View</div>
                         <h4 style="margin-bottom: 0.5rem;">TUI / Web</h4>
                         <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7;">Terminal or
                             browser-based dashboards for exploring traces, diffing memory, and analyzing token patterns
@@ -140,25 +133,6 @@
 
     <div data-component="footer"></div>
     <script src="assets/js/main.js"></script>
-    <style>
-        @media (max-width: 768px) {
-
-            div[style*="grid-template-columns: 1fr 1fr; gap: 4rem"],
-            div[style*="grid-template-columns: repeat(3, 1fr)"] {
-                grid-template-columns: 1fr !important;
-            }
-        }
-
-        @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-    </style>
 </body>
 
 </html>

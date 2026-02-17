@@ -1,120 +1,56 @@
-<footer style="background: var(--bg-soft); border-top: 1px solid var(--border-soft); padding: 4rem 0 2.5rem;">
+<footer class="footer-section">
     <div class="container">
         <div class="footer-grid">
-            <div style="max-width: 300px;">
-                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.25rem;">
-                    <div
-                        style="width: 22px; height: 22px; background: var(--text-main); border-radius: 5px; display: flex; align-items: center; justify-content: center; color: white;">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="3">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                             <circle cx="12" cy="12" r="10"></circle>
                         </svg>
                     </div>
-                    <span
-                        style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--text-main);">Oculo</span>
+                    <span class="footer-logo-text">Oculo</span>
                 </div>
-                <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7;">The Glass Box for AI Agents.
-                    Transparent, local-first, high-performance tracing for the next generation of software.</p>
-                <div style="display: flex; gap: 0.75rem; margin-top: 1.25rem;">
-                    <a href="https://x.com/oculo_dev" style="color: var(--text-faint); transition: color 0.2s;"
-                        onmouseover="this.style.color='var(--text-main)'"
-                        onmouseout="this.style.color='var(--text-faint)'">
+                <p class="footer-description">The Glass Box for AI Agents. Transparent, local-first, high-performance tracing for the next generation of software.</p>
+                <div class="footer-socials">
+                    <a href="https://x.com/oculo_dev" class="social-link">
                         <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                         </svg>
                     </a>
-                    <a href="https://github.com/Mr-Dark-debug/Oculo"
-                        style="color: var(--text-faint); transition: color 0.2s;"
-                        onmouseover="this.style.color='var(--text-main)'"
-                        onmouseout="this.style.color='var(--text-faint)'">
+                    <a href="https://github.com/Mr-Dark-debug/Oculo" class="social-link">
                         <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
                         </svg>
                     </a>
                 </div>
             </div>
             <div>
-                <h4
-                    style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-faint); font-weight: 700; margin-bottom: 1.25rem;">
-                    Product</h4>
-                <ul style="list-style: none; font-size: 0.9rem;">
-                    <li style="margin-bottom: 0.5rem;"><a href="website/docs.html"
-                            style="color: var(--text-muted); transition: color 0.2s;"
-                            onmouseover="this.style.color='var(--text-main)'"
-                            onmouseout="this.style.color='var(--text-muted)'">Documentation</a></li>
-                    <li style="margin-bottom: 0.5rem;"><a href="website/installation.html"
-                            style="color: var(--text-muted); transition: color 0.2s;"
-                            onmouseover="this.style.color='var(--text-main)'"
-                            onmouseout="this.style.color='var(--text-muted)'">Installation</a></li>
-                    <li style="margin-bottom: 0.5rem;"><a href="website/changelog.html"
-                            style="color: var(--text-muted); transition: color 0.2s;"
-                            onmouseover="this.style.color='var(--text-main)'"
-                            onmouseout="this.style.color='var(--text-muted)'">Changelog</a></li>
-                    <li style="margin-bottom: 0.5rem;"><a href="website/roadmap.html"
-                            style="color: var(--text-muted); transition: color 0.2s;"
-                            onmouseover="this.style.color='var(--text-main)'"
-                            onmouseout="this.style.color='var(--text-muted)'">Roadmap</a></li>
+                <h4 class="footer-heading">Product</h4>
+                <ul class="footer-links">
+                    <li><a href="website/docs.html">Documentation</a></li>
+                    <li><a href="website/installation.html">Installation</a></li>
+                    <li><a href="website/changelog.html">Changelog</a></li>
+                    <li><a href="website/roadmap.html">Roadmap</a></li>
                 </ul>
             </div>
             <div>
-                <h4
-                    style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-faint); font-weight: 700; margin-bottom: 1.25rem;">
-                    Community</h4>
-                <ul style="list-style: none; font-size: 0.9rem;">
-                    <li style="margin-bottom: 0.5rem;"><a href="https://github.com/Mr-Dark-debug/Oculo"
-                            style="color: var(--text-muted); transition: color 0.2s;"
-                            onmouseover="this.style.color='var(--text-main)'"
-                            onmouseout="this.style.color='var(--text-muted)'">GitHub</a></li>
-                    <li style="margin-bottom: 0.5rem;"><a href="website/contributors.html"
-                            style="color: var(--text-muted); transition: color 0.2s;"
-                            onmouseover="this.style.color='var(--text-main)'"
-                            onmouseout="this.style.color='var(--text-muted)'">Contributors</a></li>
-                    <li style="margin-bottom: 0.5rem;"><a href="website/blog.html"
-                            style="color: var(--text-muted); transition: color 0.2s;"
-                            onmouseover="this.style.color='var(--text-main)'"
-                            onmouseout="this.style.color='var(--text-muted)'">Blog</a></li>
+                <h4 class="footer-heading">Community</h4>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/Mr-Dark-debug/Oculo">GitHub</a></li>
+                    <li><a href="website/contributors.html">Contributors</a></li>
+                    <li><a href="website/blog.html">Blog</a></li>
                 </ul>
             </div>
             <div>
-                <h4
-                    style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-faint); font-weight: 700; margin-bottom: 1.25rem;">
-                    Legal</h4>
-                <ul style="list-style: none; font-size: 0.9rem;">
-                    <li style="margin-bottom: 0.5rem;"><a href="#"
-                            style="color: var(--text-muted); transition: color 0.2s;"
-                            onmouseover="this.style.color='var(--text-main)'"
-                            onmouseout="this.style.color='var(--text-muted)'">Privacy Policy</a></li>
-                    <li style="margin-bottom: 0.5rem;"><a href="#"
-                            style="color: var(--text-muted); transition: color 0.2s;"
-                            onmouseover="this.style.color='var(--text-main)'"
-                            onmouseout="this.style.color='var(--text-muted)'">Terms of Service</a></li>
+                <h4 class="footer-heading">Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
-        <div
-            style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-soft); text-align: center; color: var(--text-faint); font-size: 0.78rem;">
+        <div class="footer-bottom">
             &copy; 2026 Oculo Project. Built for transparency in AI.
         </div>
     </div>
 </footer>
-
-<style>
-    @media (max-width: 1024px) {
-        .footer-grid {
-            grid-template-columns: 1fr 1fr !important;
-        }
-
-        .footer-grid>div:first-child {
-            grid-column: 1 / -1;
-            margin-bottom: 1rem;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .footer-grid {
-            grid-template-columns: 1fr !important;
-        }
-    }
-</style>

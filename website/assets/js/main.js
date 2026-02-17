@@ -117,6 +117,7 @@ async function loadComponents() {
                 // Component-specific inits
                 if (name === 'navbar') {
                     highlightActiveLink();
+                    initNavbarScroll();
                     // Re-bind click listeners for mobile menu links to close menu
                     el.querySelectorAll('.mobile-menu a').forEach(a => {
                         a.addEventListener('click', toggleMobileMenu);

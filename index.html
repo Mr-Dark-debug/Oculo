@@ -17,13 +17,12 @@
 
     <main>
         <!-- ─── HERO ─────────────────────── -->
-        <section class="hero-wave-bg" style="padding: 9rem 0 7rem;">
+        <section class="hero-wave-bg hero-section">
             <div class="hero-blob hero-blob--1"></div>
             <div class="hero-blob hero-blob--2"></div>
             <div class="hero-blob hero-blob--3"></div>
 
-            <div class="container"
-                style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 2;">
+            <div class="container hero-grid">
                 <div class="reveal">
                     <div class="badge-pill" style="margin-bottom: 1.5rem;">
                         <span class="badge-dot"></span>
@@ -33,12 +32,11 @@
                         Debug AI cognition,<br>
                         not just <span class="accent">code.</span>
                     </h1>
-                    <p
-                        style="font-size: 1.15rem; color: var(--text-muted); margin: 1.5rem 0 2.5rem; max-width: 480px; line-height: 1.7;">
+                    <p class="hero-description">
                         Oculo is the <strong style="color: var(--text-main);">Glass Box</strong> for AI Agents. Inspect
                         memory mutations, token flow, and prompt evolution — all local, all real-time.
                     </p>
-                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <div class="hero-cta-group">
                         <a href="website/installation.html" class="btn-premium btn-lg">
                             Get Started Free →
                         </a>
@@ -48,9 +46,8 @@
                     </div>
                 </div>
 
-                <div class="reveal stagger-2" style="perspective: 1000px;">
-                    <div class="terminal-premium"
-                        style="transform: rotateY(-8deg) rotateX(4deg); transition: transform 0.6s ease;">
+                <div class="reveal stagger-2 hero-terminal-wrapper">
+                    <div class="terminal-premium hero-terminal">
                         <div class="terminal-dots">
                             <span></span><span></span><span></span>
                         </div>
@@ -83,8 +80,7 @@
         </section>
 
         <!-- ─── How it Works ─────────────── -->
-        <section class="section"
-            style="background: var(--bg-soft); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft);">
+        <section class="section section-soft-bg">
             <div class="container">
                 <div class="reveal text-center" style="margin-bottom: 4rem;">
                     <span class="section-label">How It Works</span>
@@ -92,27 +88,21 @@
                     <p class="section-subtitle" style="margin: 0 auto;">Oculo follows a local-first, high-throughput
                         design built for AI agent workflows.</p>
                 </div>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <div class="grid-3">
                     <div class="card reveal">
-                        <div
-                            style="font-size: 2.5rem; font-weight: 800; color: rgba(99,102,241,0.15); font-family: 'Space Grotesk', sans-serif; margin-bottom: 1rem;">
-                            01</div>
+                        <div class="step-number">01</div>
                         <h3 style="margin-bottom: 0.75rem;">The SDK</h3>
                         <p style="color: var(--text-muted); font-size: 0.95rem;">A lightweight instrumentation layer in
                             Python or Go. Wrap your agent code in traces and spans — never blocks execution.</p>
                     </div>
                     <div class="card reveal stagger-1">
-                        <div
-                            style="font-size: 2.5rem; font-weight: 800; color: rgba(99,102,241,0.15); font-family: 'Space Grotesk', sans-serif; margin-bottom: 1rem;">
-                            02</div>
+                        <div class="step-number">02</div>
                         <h3 style="margin-bottom: 0.75rem;">The Daemon</h3>
                         <p style="color: var(--text-muted); font-size: 0.95rem;">A Go-based ingestion engine that
                             batches and persists data into a local SQLite store. Sub-millisecond overhead.</p>
                     </div>
                     <div class="card reveal stagger-2">
-                        <div
-                            style="font-size: 2.5rem; font-weight: 800; color: rgba(99,102,241,0.15); font-family: 'Space Grotesk', sans-serif; margin-bottom: 1rem;">
-                            03</div>
+                        <div class="step-number">03</div>
                         <h3 style="margin-bottom: 0.75rem;">The Visualizer</h3>
                         <p style="color: var(--text-muted); font-size: 0.95rem;">A TUI or Web dashboard to explore
                             thought traces, memory diffs, and token analytics in real-time.</p>
@@ -124,7 +114,7 @@
         <!-- ─── Code Example ─────────────── -->
         <section class="section">
             <div class="container">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div class="grid-2 align-center">
                     <div class="reveal">
                         <span class="section-label">Quick Start</span>
                         <h2 class="section-title">Instrument in 4 lines.</h2>
@@ -132,20 +122,12 @@
                             Wrap individual steps in spans. That's it — Oculo handles the rest.</p>
                         <div style="display: flex; gap: 2rem; margin-top: 1.5rem;">
                             <div>
-                                <div
-                                    style="font-size: 2rem; font-weight: 800; font-family: 'Space Grotesk',sans-serif; color: var(--text-main);">
-                                    &lt;1ms</div>
-                                <div
-                                    style="font-size: 0.75rem; color: var(--text-faint); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em;">
-                                    Overhead</div>
+                                <div class="stat-highlight">&lt;1ms</div>
+                                <div class="stat-highlight-label">Overhead</div>
                             </div>
                             <div>
-                                <div
-                                    style="font-size: 2rem; font-weight: 800; font-family: 'Space Grotesk',sans-serif; color: var(--text-main);">
-                                    10K+</div>
-                                <div
-                                    style="font-size: 0.75rem; color: var(--text-faint); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em;">
-                                    Spans/sec</div>
+                                <div class="stat-highlight">10K+</div>
+                                <div class="stat-highlight-label">Spans/sec</div>
                             </div>
                         </div>
                     </div>
@@ -169,8 +151,7 @@ tracer = OculoTracer(<span style="color:#f59e0b">agent_name</span>=<span style="
         </section>
 
         <!-- ─── GitHub Stats ─────────────── -->
-        <section class="section"
-            style="background: var(--bg-soft); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft);">
+        <section class="section section-soft-bg">
             <div class="container">
                 <div data-component="github-stats"></div>
             </div>
@@ -185,61 +166,53 @@ tracer = OculoTracer(<span style="color:#f59e0b">agent_name</span>=<span style="
                     <p class="section-subtitle" style="margin: 0 auto;">From basic span tracking to advanced memory
                         regression analysis.</p>
                 </div>
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
-                    <div class="card reveal" style="text-align: center; padding: 2rem;">
-                        <div style="font-size: 1.75rem; margin-bottom: 1rem;">🌳</div>
-                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Span Timeline</h4>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);">Tree view of every operation your agent
-                            performs</p>
+                <div class="grid-4">
+                    <div class="card reveal text-center-mobile" style="padding: 2rem;">
+                        <div class="capability-icon">🌳</div>
+                        <h4 class="capability-title">Span Timeline</h4>
+                        <p class="capability-desc">Tree view of every operation your agent performs</p>
                     </div>
-                    <div class="card reveal stagger-1" style="text-align: center; padding: 2rem;">
-                        <div style="font-size: 1.75rem; margin-bottom: 1rem;">🧠</div>
-                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Memory Diffs</h4>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);">Unified diff view of memory mutations
-                            across spans</p>
+                    <div class="card reveal stagger-1 text-center-mobile" style="padding: 2rem;">
+                        <div class="capability-icon">🧠</div>
+                        <h4 class="capability-title">Memory Diffs</h4>
+                        <p class="capability-desc">Unified diff view of memory mutations across spans</p>
                     </div>
-                    <div class="card reveal stagger-2" style="text-align: center; padding: 2rem;">
-                        <div style="font-size: 1.75rem; margin-bottom: 1rem;">📊</div>
-                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Token Analysis</h4>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);">Per-span and trace-level token usage
-                            with visual bars</p>
+                    <div class="card reveal stagger-2 text-center-mobile" style="padding: 2rem;">
+                        <div class="capability-icon">📊</div>
+                        <h4 class="capability-title">Token Analysis</h4>
+                        <p class="capability-desc">Per-span and trace-level token usage with visual bars</p>
                     </div>
-                    <div class="card reveal stagger-3" style="text-align: center; padding: 2rem;">
-                        <div style="font-size: 1.75rem; margin-bottom: 1rem;">🚨</div>
-                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Anomaly Detection</h4>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);">Z-score based token hotspot detection
-                        </p>
+                    <div class="card reveal stagger-3 text-center-mobile" style="padding: 2rem;">
+                        <div class="capability-icon">🚨</div>
+                        <h4 class="capability-title">Anomaly Detection</h4>
+                        <p class="capability-desc">Z-score based token hotspot detection</p>
                     </div>
-                    <div class="card reveal" style="text-align: center; padding: 2rem;">
-                        <div style="font-size: 1.75rem; margin-bottom: 1rem;">📈</div>
-                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Memory Growth</h4>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);">Linear regression to detect unbounded
-                            state accumulation</p>
+                    <div class="card reveal text-center-mobile" style="padding: 2rem;">
+                        <div class="capability-icon">📈</div>
+                        <h4 class="capability-title">Memory Growth</h4>
+                        <p class="capability-desc">Linear regression to detect unbounded state accumulation</p>
                     </div>
-                    <div class="card reveal stagger-1" style="text-align: center; padding: 2rem;">
-                        <div style="font-size: 1.75rem; margin-bottom: 1rem;">💰</div>
-                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Cost Attribution</h4>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);">Per-model cost breakdown using
-                            configurable pricing</p>
+                    <div class="card reveal stagger-1 text-center-mobile" style="padding: 2rem;">
+                        <div class="capability-icon">💰</div>
+                        <h4 class="capability-title">Cost Attribution</h4>
+                        <p class="capability-desc">Per-model cost breakdown using configurable pricing</p>
                     </div>
-                    <div class="card reveal stagger-2" style="text-align: center; padding: 2rem;">
-                        <div style="font-size: 1.75rem; margin-bottom: 1rem;">🔍</div>
-                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Full-Text Search</h4>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);">FTS5-powered search over prompts and
-                            completions</p>
+                    <div class="card reveal stagger-2 text-center-mobile" style="padding: 2rem;">
+                        <div class="capability-icon">🔍</div>
+                        <h4 class="capability-title">Full-Text Search</h4>
+                        <p class="capability-desc">FTS5-powered search over prompts and completions</p>
                     </div>
-                    <div class="card reveal stagger-3" style="text-align: center; padding: 2rem;">
-                        <div style="font-size: 1.75rem; margin-bottom: 1rem;">🛡️</div>
-                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Crash Recovery</h4>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);">WAL journal with pending write recovery
-                        </p>
+                    <div class="card reveal stagger-3 text-center-mobile" style="padding: 2rem;">
+                        <div class="capability-icon">🛡️</div>
+                        <h4 class="capability-title">Crash Recovery</h4>
+                        <p class="capability-desc">WAL journal with pending write recovery</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ─── Contributors ─────────────── -->
-        <section class="section" style="background: var(--bg-soft); border-top: 1px solid var(--border-soft);">
+        <section class="section section-soft-bg">
             <div class="container text-center">
                 <span class="section-label">Community</span>
                 <h2 class="section-title" style="margin-bottom: 3rem;">Built by Developers.</h2>
@@ -256,23 +229,13 @@ tracer = OculoTracer(<span style="color:#f59e0b">agent_name</span>=<span style="
         <!-- ─── CTA ──────────────────────── -->
         <section class="section">
             <div class="container">
-                <div
-                    style="background: var(--text-main); color: white; border-radius: var(--radius-lg); padding: 4.5rem; text-align: center; position: relative; overflow: hidden;">
-                    <div
-                        style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at center, rgba(99, 102, 241, 0.2) 0%, transparent 50%); pointer-events: none;">
-                    </div>
-                    <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; position: relative;">Ready to
-                        Open the Box?</h2>
-                    <p
-                        style="font-size: 1.1rem; color: rgba(255,255,255,0.6); max-width: 500px; margin: 0 auto 2.5rem; position: relative;">
-                        Join AI engineers building more reliable agentic systems with Oculo.</p>
-                    <div
-                        style="position: relative; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                        <a href="website/installation.html" class="btn-premium"
-                            style="background: white; color: var(--text-main);">Get Started Free</a>
-                        <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium"
-                            style="background: transparent; border: 1.5px solid rgba(255,255,255,0.3);">View on
-                            GitHub</a>
+                <div class="cta-card">
+                    <div class="cta-glow"></div>
+                    <h2 class="cta-title">Ready to Open the Box?</h2>
+                    <p class="cta-subtitle">Join AI engineers building more reliable agentic systems with Oculo.</p>
+                    <div class="cta-buttons">
+                        <a href="website/installation.html" class="btn-premium btn-white">Get Started Free</a>
+                        <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium btn-outline-white">View on GitHub</a>
                     </div>
                 </div>
             </div>
@@ -282,55 +245,6 @@ tracer = OculoTracer(<span style="color:#f59e0b">agent_name</span>=<span style="
     <div data-component="footer"></div>
 
     <script src="website/assets/js/main.js"></script>
-    <style>
-        .avatar-link img {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            border: 2px solid white;
-            box-shadow: var(--shadow-sm);
-            transition: transform 0.3s ease;
-        }
-
-        .avatar-link:hover img {
-            transform: scale(1.15) translateY(-4px);
-            border-color: var(--brand-primary);
-        }
-
-        @media (max-width: 1024px) {
-            .hero-wave-bg .container {
-                grid-template-columns: 1fr !important;
-                text-align: center;
-            }
-
-            .hero-wave-bg .container>.reveal:last-child {
-                display: none;
-            }
-
-            .hero-wave-bg .container>.reveal p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-wave-bg .container>.reveal div:last-child {
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 768px) {
-            section .container>div[style*="grid-template-columns: repeat(3"] {
-                grid-template-columns: 1fr !important;
-            }
-
-            section .container>div[style*="grid-template-columns: repeat(4"] {
-                grid-template-columns: repeat(2, 1fr) !important;
-            }
-
-            section .container>div[style*="grid-template-columns: 1fr 1fr"] {
-                grid-template-columns: 1fr !important;
-            }
-        }
-    </style>
 </body>
 
 </html>

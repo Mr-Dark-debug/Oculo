@@ -25,15 +25,35 @@
             style="padding: 0.5rem 1.1rem; font-size: 0.8rem;">Star on GitHub</a>
     </div>
 
-    <!-- Mobile Hamburger -->
+    <!-- Mobile Hamburger Trigger -->
     <div class="nav-toggle" onclick="toggleMobileMenu()">
         <span></span>
         <span></span>
         <span></span>
     </div>
+</nav>
 
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu">
+<!-- Mobile Menu Overlay (Moved outside nav to avoid transform clipping/context) -->
+<div class="mobile-menu">
+    <div class="mobile-menu-header">
+        <a href="index.html" class="nav-logo-container" onclick="toggleMobileMenu()">
+            <div class="nav-logo-icon" style="background: var(--text-main); color: white;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <circle cx="12" cy="12" r="10"></circle>
+                </svg>
+            </div>
+            Oculo
+        </a>
+        <div class="mobile-close-btn" onclick="toggleMobileMenu()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </div>
+    </div>
+
+    <div class="mobile-menu-links">
         <a href="website/docs.html" class="nav-link-premium">Docs</a>
         <a href="website/installation.html" class="nav-link-premium">Install</a>
         <a href="website/roadmap.html" class="nav-link-premium">Roadmap</a>
@@ -41,7 +61,7 @@
         <a href="website/about.html" class="nav-link-premium">About</a>
         <a href="website/contributors.html" class="nav-link-premium">Team</a>
         <a href="website/contact.html" class="nav-link-premium">Contact</a>
-        <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium" style="margin-top: 1rem;">Star on
-            GitHub</a>
+        <a href="https://github.com/Mr-Dark-debug/Oculo" class="btn-premium"
+            style="margin-top: 1rem; width: 100%; justify-content: center;">Star on GitHub</a>
     </div>
-</nav>
+</div>
