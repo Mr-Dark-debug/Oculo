@@ -102,7 +102,7 @@ async function loadComponents() {
     for (const el of components) {
         const name = el.getAttribute('data-component');
         try {
-            const response = await fetch(`${basePath}${name}.html`);
+            const response = await fetch(`${basePath}${name}.html?v=${new Date().getTime()}`);
             if (response.ok) {
                 let html = await response.text();
 
