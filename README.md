@@ -22,6 +22,9 @@
 
 ---
 
+<img width="1902" height="930" alt="image" src="https://github.com/user-attachments/assets/fba03f67-bede-4cb0-aec4-10cdd520c334" />
+
+---
 ## Install
 
 **One-line install** (Linux / macOS):
